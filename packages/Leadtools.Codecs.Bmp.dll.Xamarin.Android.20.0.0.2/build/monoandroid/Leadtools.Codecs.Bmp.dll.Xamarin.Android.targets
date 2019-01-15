@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <AndroidNativeLibrary Include="$(MSBuildThisFileDirectory)..\..\lib\MonoAndroid\arm64-v8a\libleadtools.codecs.bmp.so">
+      <Abi>arm64-v8a</Abi>
+      <link>libs\arm64-v8a\libleadtools.codecs.bmp.so</link>
+      <buildAction>Content</buildAction>
+      <copyToOutput>true</copyToOutput>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="$(MSBuildThisFileDirectory)..\..\lib\MonoAndroid\armeabi-v7a\libleadtools.codecs.bmp.so">
+      <Abi>armeabi-v7a</Abi>
+      <link>libs\armeabi-v7a\libleadtools.codecs.bmp.so</link>
+      <buildAction>Content</buildAction>
+      <copyToOutput>true</copyToOutput>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="$(MSBuildThisFileDirectory)..\..\lib\MonoAndroid\armeabi\libleadtools.codecs.bmp.so">
+      <Abi>armeabi</Abi>
+      <link>libs\armeabi\libleadtools.codecs.bmp.so</link>
+      <buildAction>Content</buildAction>
+      <copyToOutput>true</copyToOutput>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="$(MSBuildThisFileDirectory)..\..\lib\MonoAndroid\x86_64\libleadtools.codecs.bmp.so">
+      <Abi>x86_64</Abi>
+      <link>libs\x86_64\libleadtools.codecs.bmp.so</link>
+      <buildAction>Content</buildAction>
+      <copyToOutput>true</copyToOutput>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="$(MSBuildThisFileDirectory)..\..\lib\MonoAndroid\x86\libleadtools.codecs.bmp.so">
+      <Abi>x86</Abi>
+      <link>libs\x86\libleadtools.codecs.bmp.so</link>
+      <buildAction>Content</buildAction>
+      <copyToOutput>true</copyToOutput>
+    </AndroidNativeLibrary>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,2104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Leadtools.ImageProcessing.Effects</name>
+  </assembly>
+  <members>
+    <member name="T:Leadtools.ImageProcessing.Effects.AddMessageCommand">
+      <summary>Adds a message (text or file) to the image. This command is available in the Document/Medical Toolkits.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.AddMessageCommand.#ctor">
+      <summary>Initializes a new AddMessageCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.AddMessageCommand.#ctor(System.String,System.String,System.String,Leadtools.LeadPoint)">
+      <summary>Initializes a new AddMessageCommand class object with explicit parameters.</summary>
+      <param name="message">String that will be added to the image. If you want to add a file, set this parameter to null.</param>
+      <param name="password">String that contains the password that will be used when adding the message to the image. To use the default password set this parameter to null. The default password is, "LEAD Technologies".</param>
+      <param name="fileName">String that contains the name of the file that will be added to the image. When adding a file to the image this string contains the name of the file that will be added, and the message parameter must be set to null, otherwise this parameter has no effect.</param>
+      <param name="start">LeadPoint at which the message will be added to the image.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.AddMessageCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this method.</summary>
+      <returns>String that contains the name of this method.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.AddMessageCommand.FileName">
+      <summary>Gets or sets a string that contains the name of the file that will be added to the image.</summary>
+      <value>String that contains the name of the file that will be added to the image. When adding a message to the image this string contains the name of the file that will be added, and the message property must be set to null, otherwise this parameter has no effect.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.AddMessageCommand.Message">
+      <summary>Gets or sets the string that will be added to the image.</summary>
+      <value>String that will be added to the image. If you want to add a file, set this property to null.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.AddMessageCommand.Password">
+      <summary>Gets or sets the string that contains the password that will be used when adding the message to the image.</summary>
+      <value>Password that will be used when adding the message to the image. To use the default password set this property to null. The default password is, "LEAD Technologies".</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.AddMessageCommand.Start">
+      <summary>Gets or sets the point at which the message will be added to the image.</summary>
+      <value>LeadPoint at which the message will be added to the image.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.AddNoiseCommand">
+      <summary>Adds random pixels to an image, letting you specify the percentage of coverage and the color plane.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.AddNoiseCommand.#ctor">
+      <summary>Initializes a new AddNoiseCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.AddNoiseCommand.#ctor(System.Int32,Leadtools.RasterColorChannel)">
+      <summary>Initializes a new AddNoiseCommand class object with explicit parameters.</summary>
+      <param name="range">Percentage of coverage, expressed in tenths of a percent. Valid values are 0 to 1000.</param>
+      <param name="channel">value that represents the color plane to which to add the noise.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.AddNoiseCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this method.</summary>
+      <returns>String that is the name of this method.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.AddNoiseCommand.Channel">
+      <summary>Gets or sets a value that represents the color plane to which to add the noise.</summary>
+      <value>Color plane constant. This plane will be affected by the noise.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.AddNoiseCommand.Range">
+      <summary>Gets or sets a value that represents the percentage of coverage, expressed in tenths of a percent.</summary>
+      <value>Percentage of coverage, expressed in tenths of a percent. Valid values are 0 to 1000.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.AlphaBlendCommand">
+      <summary>Combines image data from two images, using a specific opacity value.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.AlphaBlendCommand.#ctor">
+      <summary>Initializes a new AlphaBlendCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.AlphaBlendCommand.#ctor(Leadtools.RasterImage,Leadtools.LeadPoint,Leadtools.LeadRect,System.Int32)">
+      <summary>Initializes a new AlphaBlendCommand class object with explicit parameters.</summary>
+      <param name="sourceImage">RasterImage object that references the source image.</param>
+      <param name="sourcePoint">LeadPoint structure that contains the origin of the source rectangle. The width and height are the same width and height for the destination rectangle.</param>
+      <param name="destinationRect">LeadRect structure that contains the destination rectangle.</param>
+      <param name="opacity">Opacity value used when combining the areas from the source and affected images. This value is between 0 and 255.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.AlphaBlendCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this method.</summary>
+      <returns>string that is the name of this method.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.AlphaBlendCommand.DestinationRectangle">
+      <summary>Gets or sets the rectangle structure that contains the destination rectangle.</summary>
+      <value>LeadRect structure that contains the destination rectangle.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.AlphaBlendCommand.Opacity">
+      <summary>Gets or sets the opacity value used when combining the areas from the source and destination images.</summary>
+      <value>The valid range is from 0 - 65535 for 64-bit, 48-bit and 16-bit grayscale images and from 0 - 4095 for 12-bit grayscale images. Otherwise, it is from 0 to 255.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.AlphaBlendCommand.SourceImage">
+      <summary>Gets or sets the RasterImage object that references the source image.</summary>
+      <value>RasterImage object that references the source image.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.AlphaBlendCommand.SourcePoint">
+      <summary>Gets or sets the point structure that contains the origin of the source rectangle.</summary>
+      <value>LeadPoint structure that contain the origin of the source rectangle. the Width and Height are the same Width and Height for the destination rectangle.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.AntiAliasingCommand">
+      <summary>Applies an anti-aliasing filter to the specified image. This method is available in the Document/Medical Toolkits.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.AntiAliasingCommand.#ctor">
+      <summary>Initializes a new AntiAliasingCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.AntiAliasingCommand.#ctor(System.Int32,System.Int32,Leadtools.ImageProcessing.Effects.AntiAliasingCommandType)">
+      <summary>Initializes a new AntiAliasingCommand class object with explicit parameters.</summary>
+      <param name="threshold">Threshold value that indicates which pixels to smooth. The application of the anti-aliasing filter on the image associates a value with each pixel. Only pixels with values above this threshold are smoothed. This parameter only accepts positive values.</param>
+      <param name="dimension">Value that indicates the size of the anti-aliasing mask. For example, a value of three indicates an anti-aliasing mask of 3 X 3. This parameter only accepts positive values.</param>
+      <param name="filter">Flag that indicates the type of anti-aliasing filter to use.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.AntiAliasingCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this method.</summary>
+      <returns>String that contains the name of this method.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.AntiAliasingCommand.Dimension">
+      <summary>Gets or sets a value that indicates the size of the anti-aliasing mask.</summary>
+      <value>Value that indicates the size of the anti-aliasing mask. For example, a value of three indicates an anti-aliasing mask of 3 X 3. This parameter only accepts positive values.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.AntiAliasingCommand.Filter">
+      <summary>Gets or sets a value that indicates the type of anti-aliasing filter to use.</summary>
+      <value>Value that indicates the type of anti-aliasing filter to use.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.AntiAliasingCommand.Threshold">
+      <summary>Gets or sets the threshold value that indicates which pixels to smooth.</summary>
+      <value>Threshold value that indicates which pixels to smooth. The application of the anti-aliasing filter on the image associates a value with each pixel. Only pixels with values above this threshold are smoothed. This parameter only accepts positive values.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.AverageCommand">
+      <summary>Changes the color of each pixel in an image to the average color of pixels in its neighborhood. This results in a blur effect.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.AverageCommand.#ctor">
+      <summary>Initializes a new AverageCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.AverageCommand.#ctor(System.Int32)">
+      <summary>Initializes a new AverageCommand class object with explicit parameters.</summary>
+      <param name="dimension">Size of the averaging neighborhood. It is the length, in pixels, of one side of a square.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.AverageCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this method.</summary>
+      <returns>String that contains the name of this method.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.AverageCommand.Dimension">
+      <summary>Gets or sets the size of the averaging neighborhood.</summary>
+      <value>Size of the averaging neighborhood. It is the length, in pixels, of one side of a square.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.BinaryFilterCommand">
+      <summary>Imposes a binary filter on an image. This command is available in the Document/Medical Toolkits.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.BinaryFilterCommand.#ctor">
+      <summary>Initializes a new BinaryFilterCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.BinaryFilterCommand.#ctor(Leadtools.ImageProcessing.Effects.BinaryFilterCommandPredefined)">
+      <summary>Initializes a new BinaryFilterCommand class object with a predefined binary filter.</summary>
+      <param name="predefined">A BinaryFilterCommandPredefined enumeration value that specifies which predefined binary filter to use.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.BinaryFilterCommand.#ctor(System.Boolean,System.Int32[])">
+      <summary>Initializes a new BinaryFilterCommand class object with the specified parameters.</summary>
+      <param name="maximum">Value that represents the maximum value.</param>
+      <param name="matrix">Array of filter coefficients.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.BinaryFilterCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this method.</summary>
+      <returns>String that contains the name of this method.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.BinaryFilterCommand.Dimension">
+      <summary>Gets the dimensions of the filter.</summary>
+      <value>The size (number of rows and columns) of the matrix</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.BinaryFilterCommand.Matrix">
+      <summary>Gets or sets an array of filter coefficients.</summary>
+      <value>Array of filter coefficients.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.BinaryFilterCommand.matrixLength">
+      <summary>Gets or sets the length of the matrix array</summary>
+      <value>A Int32 that specifies the length of the array in the Matrix property.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.BinaryFilterCommand.Maximum">
+      <summary>Gets or sets the maximum value.</summary>
+      <value>true to erode black objects and false to dilate black objects</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.ColorHalftoneCommand">
+      <summary>Shows the effect of using an enlarged halftone screen on each image channel. The filter divides the image into rectangles and replaces each rectangle with circles. Each channel has a separate grid of circles, and has its own angle setting. The size of each circle is proportional to the brightness of the rectangle that it is replacing. This method is available in the Document/Medical toolkits.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.ColorHalftoneCommand.#ctor">
+      <summary>Initializes a new ColorHalftoneCommand with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.ColorHalftoneCommand.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>Initializes a new ColorHalftoneCommand with explicit parameters.</summary>
+      <param name="maximumRadius">Maximum dot(i.e. circle) size, in pixels. This value should not be less than 5.</param>
+      <param name="cyanAngle">Cyan screen angle in a hundredths of degrees (+/-). A positive value will rotate the screen clockwise, while a negative value will rotate the screen counter-clockwise. Valid values are from -36000 to + 36000.</param>
+      <param name="magentaAngle">Magenta screen angle, in a hundredths of degrees (+/-). A positive value will rotate the screen clockwise, while a negative value will rotate the screen counter-clockwise. Valid values are from -36000 to + 36000.</param>
+      <param name="yellowAngle">Yellow screen angle in a hundredths of degrees (+/-). A positive value will rotate the screen clockwise, while a negative value will rotate the screen counter-clockwise. Valid values are from -36000 to + 36000.</param>
+      <param name="blackAngle">Black screen angle in a hundredths of degrees (+/-). A positive value will rotate the screen clockwise, while a negative value will rotate the screen counter-clockwise. Valid values are from -36000 to + 36000.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.ColorHalftoneCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this class.</summary>
+      <returns>string that is the name of this method.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.ColorHalftoneCommand.BlackAngle">
+      <summary>Gets or sets a value that represents the black screen angle in a hundredths of degrees (+/-).</summary>
+      <value>Value represents the black screen angle in a hundredths of degrees (+/-). A positive value will rotate the screen clockwise, while a negative value will rotate the screen counter-clockwise. Valid values are from -36000 to + 36000.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.ColorHalftoneCommand.CyanAngle">
+      <summary>Gets or sets a value that represents the cyan screen angle in a hundredths of degrees (+/-).</summary>
+      <value>Value represents the cyan screen angle in a hundredths of degrees (+/-). A positive value will rotate the screen clockwise, while a negative value will rotate the screen counter-clockwise.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.ColorHalftoneCommand.MagentaAngle">
+      <summary>Gets or sets a value that represents the magenta screen angle in a hundredths of degrees (+/-).</summary>
+      <value>Value that represents the magenta screen angle in a hundredths of degrees (+/-). A positive value will rotate the screen clockwise, while a negative value will rotate the screen counter-clockwise. Valid values are from -36000 to + 36000.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.ColorHalftoneCommand.MaximumRadius">
+      <summary>Gets or sets a value that represents the maximum dot size, in pixels.</summary>
+      <value>Value that represents the maximum dot size. This value should not be less than 5.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.ColorHalftoneCommand.YellowAngle">
+      <summary>Gets or sets a value that represents the yellow screen angle in a hundredths of degrees (+/-).</summary>
+      <value>Value that represents the yellow screen angle in a hundredths of degrees (+/-). A positive value will rotate the screen clockwise, while a negative value will rotate the screen counter-clockwise. Valid values are from -36000 to + 36000.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.CombineCommand">
+      <summary>Combines image data from two images (source and destination), letting you specify the areas to be combined, the operations to be performed when combining the data, and which color planes (R or G or B or R, G, and B) are used.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.CombineCommand.#ctor">
+      <summary>Initializes a new CombineCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.CombineCommand.#ctor(Leadtools.RasterImage,Leadtools.LeadRect,Leadtools.LeadPoint,Leadtools.ImageProcessing.Effects.CombineCommandFlags)">
+      <summary>Initializes a new CombineCommand class object with explicit parameters.</summary>
+      <param name="sourceImage">RasterImage object that references the source image, which is combined with the destination image.</param>
+      <param name="destinationRectangle">LeadRect structure that contains the destination rectangle.</param>
+      <param name="sourcePoint">LeadPoint structure that contains the origin of the source rectangle. The width and height of the source rectangle are the same as the destination rectangle.</param>
+      <param name="flags">Flags from seven groups that define treatment of the source, treatment of the destination, the operation to use when combining the data, treatment of the resulting image, and the color plane for the destination, source and resulting images. The flags apply only to the defined rectangles (not necessarily the whole image). You can use a bitwise OR ( &amp;#166; ) to specify one flag from each group.</param>
+      <param name=" (L_UINT) (r)) + (5 ">#define CalcGrayValue16(r, g, b) ((L_UINT16) (((2 * (L_UINT32) (r)) + (5 * (L_UINT32) (g)) + (L_UINT32) (b) + 4) / 8))</param>
+      <param name=" (L_UINT32) (r)) + (5 ">```</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.CombineCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this method.</summary>
+      <returns>String that contains the name of this method.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.CombineCommand.DestinationRectangle">
+      <summary>Gets or sets the rectangle structure that contains the destination rectangle.</summary>
+      <value>Rectangle structure that contains the destination rectangle.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.CombineCommand.Flags">
+      <summary>Gets or sets flags from seven groups that define treatment of the source, treatment of the destination, the operation to use when combining the data, treatment of the resulting image, and the color planes for the destination, source and resulting images.</summary>
+      <value>Value that represents the flags. The flags apply only to the defined rectangles (not necessarily the entire image). You can use a bitwise OR ( &amp;#166; ) to specify one flag from each group.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.CombineCommand.SourceImage">
+      <summary>Gets or sets the RasterImage object that references the source image.</summary>
+      <value>RasterImage object that references the source image, which is combined with the destination image.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.CombineCommand.SourcePoint">
+      <summary>Gets or sets a point structure that contains the origin of the source rectangle.</summary>
+      <value>Point structure that contains the origin of the source rectangle. The width and height of the source rectangle are the same as those of the destination rectangle.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.ContourFilterCommand">
+      <summary>Performs a contour segment filter on the source image. This command is available in the Document/Medical Toolkits.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.ContourFilterCommand.#ctor">
+      <summary>Initializes a new ContourFilterCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.ContourFilterCommand.#ctor(System.Int32,System.Int32,System.Int32,Leadtools.ImageProcessing.Effects.ContourFilterCommandType)">
+      <summary>Initializes a new ContourFilterCommand class object with explicit parameters.</summary>
+      <param name="threshold">Threshold of the gradient magnitude. Values below this will be considered as background, and will be set to 0. Values can be from 1 to 254. A lower threshold provides a better quality image. Default is 15.</param>
+      <param name="deltaDirection">Maximum angle for the thinning algorithm. Values can be from 1 to 64. Default is 35.</param>
+      <param name="maximumError">Maximum error for approximation algorithm. Values can be from 0 to 255. Default is 5. This parameter is only valid if the type parameter is set to ApproxColor.</param>
+      <param name="type">Flag that controls the resulting image. This value tells the command what process to complete before returning.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.ContourFilterCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.ContourFilterCommand.DeltaDirection">
+      <summary>Gets or sets the maximum angle for the thinning algorithm.</summary>
+      <value>Maximum angle for the thinning algorithm. Values can be from 1 to 64. Default is 35.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.ContourFilterCommand.MaximumError">
+      <summary>Gets or sets the maximum error for the approximation algorithm.</summary>
+      <value>Maximum error for the approximation algorithm. Values can be from 0 to 255. Default is 5. This property is only valid if the Type property is set to ApproxColor.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.ContourFilterCommand.Threshold">
+      <summary>Gets or sets the threshold of the gradient magnitude.</summary>
+      <value>Threshold of the gradient magnitude. Values below this will be considered as background, and will be set to 0. Values can be from 1 to 254. A lower threshold provides a better quality image. Default is 15.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.ContourFilterCommand.Type">
+      <summary>Gets or sets a value that controls the resulting image.</summary>
+      <value>Enumerated value that controls the resulting image. This value tells the method what process to complete before returning.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.CubismCommand">
+      <summary>Remaps the image into a collection of rotated rectangles (cubic faces) so that it appears to have been created in the Cubist art style.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.CubismCommand.#ctor">
+      <summary>Initializes a new CubismCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.CubismCommand.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,Leadtools.RasterColor,Leadtools.ImageProcessing.Effects.CubismCommandFlags)">
+      <summary>Initializes a new CubismCommand class object with explicit parameters.</summary>
+      <param name="space">Space between cubes, in pixels. As this value decreases the concentration of cubes increases and vice versa. The valid range is from 1 to the image or region dimension that is minimum, that is the minimum value of the height and width. This parameter only accepts positive values.</param>
+      <param name="length">Cube side length, in pixels. This parameter only accepts positive values.</param>
+      <param name="brightness">A value that indicates the brightness of the image. This value can be a number between -1000 and 1000. Negative values darken the image and positive values lighten the image.</param>
+      <param name="angle">The cube's angle of orientation, in hundredths of a degree (+/-). This value is ignored if the CubismCommandFlags.Random flag has been set in the flags parameter. Possible values are from -36000 to 36000.</param>
+      <param name="fillColor">Specifies the background color. This value is ignored if the CubismCommandFlags.Background flag has been set in the flags parameter.</param>
+      <param name="flags">Flags that indicate the background color, cube shape and cube orientation. You can use a bit wise OR ( &amp;#166; ) to specify one flag from each group.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.CubismCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.CubismCommand.Angle">
+      <summary>Gets or sets the cube's angle of orientation.</summary>
+      <value>The cube's angle of orientation, in hundredths of a degree (+/-). This value is ignored if the CubismCommandFlags.Random flag has been set in the Flags property. Possible values are from -36000 to 36000.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.CubismCommand.Brightness">
+      <summary>Gets or sets a value that indicates the brightness of the image.</summary>
+      <value>A value that indicates the brightness of the image. This value can be a number between -1000 and 1000. Negative values darken the image and positive values lighten the image.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.CubismCommand.FillColor">
+      <summary>Gets or sets the background color.</summary>
+      <value>Value that represents the background color. This value is ignored if the CubismCommandFlags.Background flag has been set in the Flags property.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.CubismCommand.Flags">
+      <summary>Gets or sets flags that indicate the background color, cube shape and cube orientation.</summary>
+      <value>Flags that indicate the background color, cube shape and cube orientation. You can use a bit wise OR ( &amp;#166; ) to specify one flag from each group.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.CubismCommand.Length">
+      <summary>Gets or sets a value that represents the cube side length, in pixels.</summary>
+      <value>Cube side length, in pixels. This property only accepts positive values.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.CubismCommand.Space">
+      <summary>Gets or sets a value that represents the space between cubes.</summary>
+      <value>Value that represents the space between cubes, in pixels. As this value decreases the concentration of cubes increases and vice versa. The valid range is from 1 to the image or region dimension that is minimum, that is the minimum value of the height and width. This property only accepts positive values.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.DeinterlaceCommand">
+      <summary>Deinterlaces video source images by removing the black lines.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.DeinterlaceCommand.#ctor">
+      <summary>Initializes a new DeinterlaceCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.DeinterlaceCommand.#ctor(Leadtools.ImageProcessing.Effects.DeinterlaceCommandFlags)">
+      <summary>Initializes a new DeinterlaceCommand class object with explicit parameters.</summary>
+      <param name="flags">Flags that indicate how to deinterlace the image and whether to remove odd lines or even lines. You can use a bit wise OR ( &amp;#166; ) to specify one flag from each group.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.DeinterlaceCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.DeinterlaceCommand.Flags">
+      <summary>Gets or sets flags that indicate how to deinterlace the image and whether to remove odd lines or even lines.</summary>
+      <value>Flags that indicate how to deinterlace the image and whether to remove odd lines or even lines. You can use a bit wise OR ( &amp;#166; ) to specify one flag from each group.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.DirectionEdgeStatisticalCommand">
+      <summary>Detects the variation of colors in the specified direction using statistical indices. It is similar to EdgeDetectStatisticalCommand, but this command allows you to specify the direction angle.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.DirectionEdgeStatisticalCommand.#ctor">
+      <summary>Initializes a new DirectionEdgeStatisticalCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.DirectionEdgeStatisticalCommand.#ctor(System.Int32,System.Int32,System.Int32,Leadtools.RasterColor,Leadtools.RasterColor)">
+      <summary>Initializes a new DirectionEdgeStatisticalCommand class object with explicit parameters.</summary>
+      <param name="dimension">The dimension or the number of pixels used to calculate the edge in the specified direction, This parameter only accepts positive values.</param>
+      <param name="threshold">Threshold value used to determine which pixels are edge pixels. If the difference in the intensity value between the pixel being tested and the average intensity of the pixels in the area specified in the dimension parameter around it is greater than this value, the pixel is an edge pixel. The threshold range for the 16, 48, and 64-bit images is from 0 to 65535 and for 12-bit images from 0 to 4095. Otherwise, it is from 0 to 255. The threshold is applied on channels separately.</param>
+      <param name="angle">Value that represents the edge detector direction, in hundredths of degrees. Valid values range from -18000 through 18000. Positive values are produced by counterclockwise rotation above the horizon and negative values are produced by clockwise rotation below the horizon. This value is divided internally by 100.</param>
+      <param name="edgeColor">Edge color.</param>
+      <param name="backGroundColor">Non edge color.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.DirectionEdgeStatisticalCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.DirectionEdgeStatisticalCommand.Angle">
+      <summary>Gets or sets a value that specifies the edge detector direction, in hundredths of degrees.</summary>
+      <value>Value that specifies the edge detector direction, in hundredths of degrees. Valid values range from -18000 through 18000. Positive values are produced by counterclockwise rotation above the horizon and negative values are produced by clockwise rotation below the horizon. This value is divided internally by 100.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.DirectionEdgeStatisticalCommand.BackGroundColor">
+      <summary>Gets or sets the non-edge color.</summary>
+      <value>Non-edge color.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.DirectionEdgeStatisticalCommand.Dimension">
+      <summary>Gets or sets the dimension or the number of pixels used to calculate the edge in the specified direction.</summary>
+      <value>The dimension or the number of pixels used to calculate the edge in the specified direction. This property only accepts positive values.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.DirectionEdgeStatisticalCommand.EdgeColor">
+      <summary>Gets or sets the edge color.</summary>
+      <value>Edge color.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.DirectionEdgeStatisticalCommand.Threshold">
+      <summary>Gets or sets the threshold value used to determine which pixels are edge pixels.</summary>
+      <value>Threshold value used to determine which pixels are edge pixels. If the difference in the intensity value between the pixel being tested and the average intensity of the pixels in the area specified in the Dimension property around it is greater than this value, the pixel is an edge pixel. The threshold range for the 16, 48, and 64-bit images is from 0 to 65535 and for 12-bit images from 0 to 4095. Otherwise, it is from 0 to 255. The threshold is applied on channels separately.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.DisplacementCommand">
+      <summary>Displaces image pixels horizontally and vertically according to the values of the displacement map image.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.DisplacementCommand.#ctor">
+      <summary>Initializes a new DisplacementCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.DisplacementCommand.#ctor(Leadtools.RasterImage,System.Int32,System.Int32,Leadtools.RasterColor,Leadtools.ImageProcessing.Effects.DisplacementCommandFlags)">
+      <summary>Initializes a new DisplacementCommand class object with explicit parameters.</summary>
+      <param name="displacementMapImage">The displacement map image.</param>
+      <param name="horizontalFactor">Horizontal displacement factor, in percent of the image dimensions. The valid range is from 0 to 100.</param>
+      <param name="verticalFactor">Vertical displacement factor, in percent of the image dimensions. The valid range is from 0 to 100.</param>
+      <param name="fillColor">The RasterColor value that specifies the fill color for any exposed areas.</param>
+      <param name="flags">Flags that indicate how to handle exposed areas, and the way to use the displacement map image.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.DisplacementCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.DisplacementCommand.DisplacementMapImage">
+      <summary>Gets or sets the value that indicates the displacement image handle.</summary>
+      <value>Value that indicates the displacement image handle.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.DisplacementCommand.FillColor">
+      <summary>Gets or sets the value that indicates the RasterColor value that specifies the fill color for any exposed areas.</summary>
+      <value>Value that indicates the RasterColor value that specifies the fill color for any exposed areas.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.DisplacementCommand.Flags">
+      <summary>Gets or sets the value that indicates the how to handle exposed areas, and the way to use the displacement map image.</summary>
+      <value>Value that indicates the how to handle exposed areas, and the way to use the displacement map image.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.DisplacementCommand.HorizontalFactor">
+      <summary>Gets or sets the value that indicates the horizontal displacement factor, in percent of the image dimensions.</summary>
+      <value>Value that indicates the horizontal displacement factor, in percent of the image dimensions. The valid range is from 0 to 100.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.DisplacementCommand.VerticalFactor">
+      <summary>Gets or sets the value that indicates the vertical displacement factor, in percent of the image dimensions.</summary>
+      <value>Value that indicates the vertical displacement factor, in percent of the image dimensions. The valid range is from 0 to 100.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.EdgeDetectEffectCommand">
+      <summary>Performs edge detection on the image.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.EdgeDetectEffectCommand.#ctor">
+      <summary>Initializes a new EdgeDetectEffectCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.EdgeDetectEffectCommand.#ctor(System.Int32,System.Int32,Leadtools.ImageProcessing.Effects.EdgeDetectEffectCommandType)">
+      <summary>Initializes a new EdgeDetectEffectCommand class object with explicit parameters.</summary>
+      <param name="level">Level value used to determine the brightness of the edges. Standard value is 50. Range between 1 and 100. Big values will produce bright edges.</param>
+      <param name="threshold">Threshold value used to determine which pixels are going to be filtered. If the difference determined for a pixel is less than this value, the pixel is set to 0. If the difference is greater, the filter will be applied to the pixel. This parameter only accepts positive values.</param>
+      <param name="type">Flag that indicates the type of edge to generate.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.EdgeDetectEffectCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.EdgeDetectEffectCommand.Level">
+      <summary>Gets or sets the level value used to determine the brightness of the edges.</summary>
+      <value>Level value used to determine the brightness of the edges. Standard value is 50. Range is between 1 and 100. Big values will produce bright edges.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.EdgeDetectEffectCommand.Threshold">
+      <summary>Gets or sets the threshold value used to determine which pixels are going to be filtered.</summary>
+      <value>Threshold value used to determine which pixels are going to be filtered. If the difference determined for a pixel is less than this value, the pixel is set to 0. If the difference is greater, the filter will be applied to the pixel. This property only accepts positive values.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.EdgeDetectEffectCommand.Type">
+      <summary>Flag that indicates the type of edge to generate.</summary>
+      <value>Flag that indicates the type of edge to generate.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.EdgeDetectorCommand">
+      <summary>Applies the specified edge filter to an image. This command is available in the Document/Medical Toolkits.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.EdgeDetectorCommand.#ctor">
+      <summary>Initializes a new EdgeDetectorCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.EdgeDetectorCommand.#ctor(System.Int32,Leadtools.ImageProcessing.Effects.EdgeDetectorCommandType)">
+      <summary>Initializes a new EdgeDetectorCommand class object with explicit parameters.</summary>
+      <param name="threshold">Threshold value used to determine which pixels are edge pixels. If the difference determined for a pixel is greater than this value, the pixel is an edge pixel. This parameter only accepts positive values.</param>
+      <param name="filter">Flag that indicates which edge detection filter to apply.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.EdgeDetectorCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.EdgeDetectorCommand.Filter">
+      <summary>Flag that indicates which edge detection filter to apply.</summary>
+      <value>Flag that indicates which edge detection filter to apply.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.EdgeDetectorCommand.Threshold">
+      <summary>Gets or sets the threshold value used to determine which pixels are edge pixels.</summary>
+      <value>Threshold value used to determine which pixels are edge pixels. If the difference determined for a pixel is greater than this value, the pixel is an edge pixel. This property only accepts positive values.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.EdgeDetectStatisticalCommand">
+      <summary>Detects edges by examining the variation of colors in all directions using statistical indices.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.EdgeDetectStatisticalCommand.#ctor">
+      <summary>Initializes a new EdgeDetectStatisticalCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.EdgeDetectStatisticalCommand.#ctor(System.Int32,System.Int32,Leadtools.RasterColor,Leadtools.RasterColor)">
+      <summary>Initializes a new EdgeDetectStatisticalCommand class object with explicit parameters.</summary>
+      <param name="dimension">Dimensions of the neighborhood used to detect edges (Dimension x Dimension), in pixels. This parameter only accepts positive values.</param>
+      <param name="threshold">Threshold value used to determine which pixels are edge pixels. If the difference determined by the edge detector algorithm for a pixel is greater than this value, the pixel is an edge pixel. This parameter only accepts positive values.</param>
+      <param name="edgeColor">Edge color.</param>
+      <param name="backGroundColor">Non edge color.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.EdgeDetectStatisticalCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.EdgeDetectStatisticalCommand.BackGroundColor">
+      <summary>Gets or sets the non-edge color.</summary>
+      <value>Non-edge color.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.EdgeDetectStatisticalCommand.Dimension">
+      <summary>Gets or sets the dimensions of the neighborhood used to detect edges (Dimension x Dimension), in pixels. This property only accepts positive values.</summary>
+      <value>Dimensions of the neighborhood used to detect edges (Dimension x Dimension), in pixels.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.EdgeDetectStatisticalCommand.EdgeColor">
+      <summary>Gets or sets the edge color.</summary>
+      <value>Edge color.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.EdgeDetectStatisticalCommand.Threshold">
+      <summary>Gets or sets the threshold value used to determine which pixels are edge pixels.</summary>
+      <value>Threshold value used to determine which pixels are edge pixels. If the difference determined by the edge detector algorithm for a pixel is greater than this value, the pixel is an edge pixel. This property only accepts positive values.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.EffectsUtilities">
+      <summary>Effect utility class.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.EffectsUtilities.GetCurvePoints(System.Int32[],Leadtools.LeadPoint[],Leadtools.ImageProcessing.Effects.CurvePointsType)">
+      <summary>Updates the curve array based on a curve or lines that pass through the specified points.</summary>
+      <param name="curve">Array of integers to be filled by this method. To get the real value of the array elements, each of the values must be divided by 1000.</param>
+      <param name="userPoints">Array of LeadPoint structures that contain the points on the curve used to determine the values of curve array. The minimum x coordinate value is 0.</param>
+      <param name="type">Flag that indicates the method to be used to update the curve array.</param>
+      <returns>return the number of entries in curve array that were actually updated by this method.</returns>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.EffectsUtilities.GetFunctionalLookupTable(System.Int32[],System.Int32,System.Int32,System.Int32,Leadtools.ImageProcessing.Effects.FunctionalLookupTableFlags)">
+      <summary>Updates a range of entries in the lookup table, based on the specified mathematical function.</summary>
+      <param name="lookupTable">Lookup table array to be filled by this method. The user must set the first and the last element of the lookup table manually (i.e. lookupTable\[0\] = firstValue; lookupTable\[tableSize - 1\] = lastValue;), if you set the first element to last value and the last element to the first value then the lookup table will become inverted.</param>
+      <param name="start">Index of the first entry in the lookup table to update. The indices of the table correspond to the intensity values. If this parameter has a negative value the corresponding index to \lookupTable\ is equal to its value + its length. The range of its possible value is between (-\lookupTable\ length/2) and (\lookupTable\ length/2 - 1).</param>
+      <param name="end">Index of the last entry in the lookup table to update. The indices of the table correspond to the intensity values. If this parameter has a negative value the corresponding index to \lookupTable\ is equal to its value + its length. The range of its possible value is between (-\lookupTable\ length/2) and (\lookupTable\ length/2 - 1).</param>
+      <param name="factor">Value that indicates the factor to be applied in the function operation specified in the \flags\ parameter. This parameter is used only if \flags\ is set to FunctionalLookupTableFlags.Exponential, FunctionalLookupTableFlags.Sigmoid or FunctionalLookupTableFlags.Logarithm. If FunctionalLookupTableFlags.Exponential or FunctionalLookupTableFlags.Sigmoid is set, the value of this parameter can be any integer (+/-). If FunctionalLookupTableFlags.Logarithm is set, its value should be &gt;= 0. However, if \factor\ = 0, the lookup table will be filled linearly from start to end, regardless of the value set in \flags\.</param>
+      <param name="flags">Flags that indicate the function used to update the lookup table and whether or not the \lookupTable\ should contain signed or unsigned data.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.EffectsUtilities.GetRegionPerimeterLength(Leadtools.RasterImage,Leadtools.RasterRegionXForm)">
+      <summary>Updates the curve array based on a curve or lines that pass through the specified points.</summary>
+      <param name="image">References the image that contains the region.</param>
+      <param name="xForm">RasterRegionXForm object that contains information used to translate between display coordinates and image coordinates. If you specify null in this parameter, the scalar fields default to 1, the offsets default to 0, and the view perspective defaults to the image's view perspective.</param>
+      <returns>The perimeter length of the region.</returns>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.EffectsUtilities.GetUserLookupTable(System.Int32[],Leadtools.LeadPoint[])">
+      <summary>Updates the lookup table, based on a curve that passes through the specified points.</summary>
+      <param name="lookupTable">Lookup table array to be filled by this method.</param>
+      <param name="userPoints">Array of LeadPoint structures that contain the points on the curve used to update the lookup table.</param>
+      <returns>return the number of entries in the lookup table array that were actually updated by this method.</returns>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.EmbossCommand">
+      <summary>Applies an emboss effect to an image, letting you specify the depth and direction of the effect.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.EmbossCommand.#ctor">
+      <summary>Initializes a new EmbossCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.EmbossCommand.#ctor(Leadtools.ImageProcessing.Effects.EmbossCommandDirection,System.Int32)">
+      <summary>Initializes a new EmbossCommand class object with explicit parameters.</summary>
+      <param name="direction">The direction of the apparent light source. Only positive values are accepted.</param>
+      <param name="depth">The apparent depth of this three-dimensional effect. Valid values are 0 to 1000, with 500 as normal.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.EmbossCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.EmbossCommand.Depth">
+      <summary>Gets or sets a value that represents the apparent depth of this three-dimensional effect.</summary>
+      <value>Value that represents the apparent depth of this three-dimensional effect. Valid values are 0 to 1000, with 500 as normal.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.EmbossCommand.Direction">
+      <summary>Gets or sets a value that represents the direction of the apparent light source.</summary>
+      <value>Value that represents the direction of the apparent light source.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.ExtractMessageCommand">
+      <summary>Extracts a message (text or file) from the image, if the image has an embedded message. This command is available in the Document/Medical Toolkits.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.ExtractMessageCommand.#ctor">
+      <summary>Initializes a new ExtractMessageCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.ExtractMessageCommand.#ctor(System.String,System.String,Leadtools.LeadPoint)">
+      <summary>Initializes a new ExtractMessageCommand class object with explicit parameters.</summary>
+      <param name="password">String that contains the password used when extracting the message from the image.</param>
+      <param name="directory">String that contains the full path name of the directory in which to save the extracted file. If the extracted message is a file this parameter is used to specify the path for saving the extracted file. To save the extracted file using the original path, set this parameter to null. If the extracted message is text this parameter has no effect.</param>
+      <param name="start">LeadPoint at which the message will be extracted from the image.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.ExtractMessageCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.ExtractMessageCommand.Directory">
+      <summary>Gets or sets the full path name of the directory in which to save the extracted file.</summary>
+      <value>Full path name of the directory in which to save the extracted file. If the extracted message is a file this property is used to specify the path for saving the extracted file. To save the extracted file using the original path, set this property to null. If the extracted message is text this property has no effect.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.ExtractMessageCommand.FileName">
+      <summary>This property is updated with the name of the file extracted from an image.</summary>
+      <value>String that contains the name of the file that will be extracted from an image.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.ExtractMessageCommand.Message">
+      <summary>This property is updated with the text extracted from the image.</summary>
+      <value>String that contains the text extracted from the image.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.ExtractMessageCommand.Password">
+      <summary>Gets or sets the password used when extracting the message from the image.</summary>
+      <value>Password used when extracting the message from the image.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.ExtractMessageCommand.Start">
+      <summary>Gets or sets the point at which the message will be extracted from the image.</summary>
+      <value>LeadPoint at which the message will be extracted from the image.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.FadedMaskCommand">
+      <summary>Creates a fade mask image in which the color of each pixel is changed with respect to its position in the image. This change depends on the fade rate.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.FadedMaskCommand.#ctor">
+      <summary>Initializes a new FadedMaskCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.FadedMaskCommand.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,Leadtools.ImageProcessing.Effects.FadedMaskCommandFlags,System.Int32,Leadtools.RasterColor)">
+      <summary>Initializes a new FadedMaskCommand class object with explicit parameters.</summary>
+      <param name="length">Value that represents the extent of the fade, in pixels.</param>
+      <param name="fadeRate">Value that represents the rate at which the color will fade with each step. Values are between 0 and 255.</param>
+      <param name="stepSize">Step size at which the color will change. This value is in pixels.</param>
+      <param name="inflate">Value used to expand the resulting image. This parameter is valid only when FadedMaskCommandFlags.FadeOutsideRegion flag is set.</param>
+      <param name="flags">Flags that indicate how the fade mask will be created.</param>
+      <param name="maximumGray">The maximum value of the fade color. Possible values are between 0 and 255.</param>
+      <param name="transparent">Contains the transparency color.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.FadedMaskCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.FadedMaskCommand.FadeRate">
+      <summary>Gets or sets a value that represents the rate at which the color will fade with each step.</summary>
+      <value>Value that represents the rate at which the color will fade with each step. Values are between 0 and 255.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.FadedMaskCommand.Flags">
+      <summary>Gets or sets flags that indicate how the fade mask will be created.</summary>
+      <value>Flags that indicate how the fade mask will be created.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.FadedMaskCommand.Inflate">
+      <summary>Gets or sets a value used to expand the resulting image.</summary>
+      <value>Value used to expand the resulting image. This property is valid only when FadedMaskCommandFlags.FadeOutsideRegion is set in the Flag property.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.FadedMaskCommand.Length">
+      <summary>Gets or sets a value that represents the extent of the fade.</summary>
+      <value>Value that represents the extent of the fade, in pixels.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.FadedMaskCommand.MaskImage">
+      <summary>RasterImage object that references a 24-bit image in which the fade mask will be created.</summary>
+      <value>RasterImage object that references a 24-bit image in which the fade mask will be created.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.FadedMaskCommand.MaximumGray">
+      <summary>Gets or sets the maximum value of the fade color.</summary>
+      <value>The maximum value of the fade color. Possible values are between 0 and 255.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.FadedMaskCommand.StepSize">
+      <summary>Gets or sets a value that represents the step size at which the color will change.</summary>
+      <value>Step size at which the color will change. This value is in pixels.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.FadedMaskCommand.Transparent">
+      <summary>Gets or sets the transparency color.</summary>
+      <value>The transparency color.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.FeatherAlphaBlendCommand">
+      <summary>Combines image data from two images with feathering. The two images can be combined with variable opacity applied by specifying the region of a fade mask image.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.FeatherAlphaBlendCommand.#ctor">
+      <summary>Initializes a new FeatherAlphaBlendCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.FeatherAlphaBlendCommand.#ctor(Leadtools.RasterImage,Leadtools.LeadPoint,Leadtools.LeadRect,Leadtools.RasterImage)">
+      <summary>Initializes a new FeatherAlphaBlendCommand class object with explicit parameters.</summary>
+      <param name="sourceImage">RasterImage object that references the source image.</param>
+      <param name="sourcePoint">LeadPoint structure that contains the origin of the source rectangle. The width and height are the same width and height for the destination rectangle.</param>
+      <param name="destinationRectangle">LeadRect structure that contains the destination rectangle.</param>
+      <param name="maskImage">RasterImage object that references the fade mask. If you want to combine the two images just with opacity set this property to null.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.FeatherAlphaBlendCommand.#ctor(Leadtools.RasterImage,Leadtools.LeadPoint,Leadtools.LeadRect,Leadtools.RasterImage,Leadtools.LeadPoint)">
+      <summary>Initializes a new FeatherAlphaBlendCommand class object with explicit parameters.</summary>
+      <param name="sourceImage">RasterImage object that references the source image.</param>
+      <param name="sourcePoint">LeadPoint structure that contains the origin of the source rectangle. The width and height are the same width and height for the destination rectangle.</param>
+      <param name="destinationRectangle">LeadRect structure that contains the destination rectangle.</param>
+      <param name="maskImage">RasterImage object that references the fade mask. If you want to combine the two images just with opacity set this property to null.</param>
+      <param name="maskSourcePoint">LeadPoint structure that contains the origin of the mask rectangle. The width and height for the mask rectangle are the same width and height for the destination rectangle.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.FeatherAlphaBlendCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.FeatherAlphaBlendCommand.DestinationRectangle">
+      <summary>Rectangle structure the contains the destination rectangle.</summary>
+      <value>LeadRect structure that contains the destination rectangle.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.FeatherAlphaBlendCommand.MaskImage">
+      <summary>Gets or sets the RasterImage object that references the fade mask.</summary>
+      <value>RasterImage object that references the fade mask. If you want to combine the two images with opacity only, set this property to null.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.FeatherAlphaBlendCommand.MaskSourcePoint">
+      <summary>Gets or sets the origin of the mask rectangle.</summary>
+      <value>Origin of the mask rectangle. The width and height are the same width and height for the destination rectangle.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.FeatherAlphaBlendCommand.SourceImage">
+      <summary>Gets or set the RasterImage object that references the source image.</summary>
+      <value>RasterImage object that references the source image.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.FeatherAlphaBlendCommand.SourcePoint">
+      <summary>Gets or sets the origin of the source rectangle.</summary>
+      <value>Origin of the source rectangle. The width and height are the same width and height for the destination rectangle.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.FeretsDiameterCommand">
+      <summary>Computes the Feret's diameter of an object (the maximum distance between the points of the perimeter of the region), and finds its end points.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.FeretsDiameterCommand.#ctor">
+      <summary>Initializes a new FeretsDiameterCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.FeretsDiameterCommand.#ctor(Leadtools.LeadPoint[])">
+      <summary>Initializes a new FeretsDiameterCommand class object with explicit parameters.</summary>
+      <param name="points">An array of object contour coordinate points.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.FeretsDiameterCommand.Run">
+      <summary>Apply the method.</summary>
+      <returns>1 the command was successful</returns>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.FeretsDiameterCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.FeretsDiameterCommand.FeretsDiameter">
+      <summary>A property to be updated with the length of the Feret's diameter.</summary>
+      <value>The length of the Feret's diameter. The length is measured in pixels and is internally multiplied by 1000. Divide this value by 1000 to obtain the real length.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.FeretsDiameterCommand.FirstIndex">
+      <summary>A property to be updated with the index of the first end point of the Feret's diameter.</summary>
+      <value>Index of the first end point of the Feret's diameter.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.FeretsDiameterCommand.Points">
+      <summary>Gets or sets an array of object contour coordinate points.</summary>
+      <value>An array of object contour coordinate points.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.FeretsDiameterCommand.SecondIndex">
+      <summary>A property to be updated with the index of the second end point of the Feret's diameter.</summary>
+      <value>Index of the second end point of the Feret's diameter.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.GaussianCommand">
+      <summary>Smooths or blurs an image by applying a Gaussian filter to the specified image.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.GaussianCommand.#ctor">
+      <summary>Initializes a new GaussianCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.GaussianCommand.#ctor(System.Int32)">
+      <summary>Initializes a new GaussianCommand class object with explicit parameters.</summary>
+      <param name="radius">Value that indicates the radius of the neighborhood on which the filter is applied.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.GaussianCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.GaussianCommand.Radius">
+      <summary>Gets or sets a value that indicates the radius of the neighborhood on which the filter is applied.</summary>
+      <value>Value that indicates the radius of the neighborhood on which the filter is applied.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.HighPassCommand">
+      <summary>Removes low frequency details in an image, resulting in a sharpened image.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.HighPassCommand.#ctor">
+      <summary>Initializes a new HighPassCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.HighPassCommand.#ctor(System.Int32,System.Int32)">
+      <summary>Initializes a new HighPassCommand class object with explicit parameters.</summary>
+      <param name="radius">Value greater than 0 that indicates the radius of the neighborhood on which the filter is applied, in pixels.</param>
+      <param name="opacity">Value that represents the intensity of the effect. The valid range is from 0 to 100. At 100, only the object outlines remain.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.HighPassCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.HighPassCommand.Opacity">
+      <summary>Gets or sets the value that indicates the intensity of the effect.</summary>
+      <value>Value that indicates the intensity of the effect. The valid range is from 0 to 100. At 100, only the object outlines remain.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.HighPassCommand.Radius">
+      <summary>Gets or sets the value that indicates the radius of the neighborhood on which the filter is applied.</summary>
+      <value>Value that indicates the radius of the neighborhood on which the filter is applied. Valid values are greater than 0.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.MaskConvolutionCommand">
+      <summary>Applies various 3D effects to an image.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.MaskConvolutionCommand.#ctor">
+      <summary>Initializes a new MaskConvolutionCommand with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.MaskConvolutionCommand.#ctor(System.Int32,System.Int32,System.Int32,Leadtools.ImageProcessing.Effects.MaskConvolutionCommandType)">
+      <summary>Initializes a new MaskConvolutionCommand with explicit parameters.</summary>
+      <param name="angle">Angle of apparent light source, in hundredths of degrees. Possible values range from -36000 to 36000.</param>
+      <param name="depth">The depth of the 3D effect. (This value is divided internally by 100). This value is used as a multiplier for the individual mask values.</param>
+      <param name="height">Non-zero value greater than 2, that represents the height of the mask matrix. This value determines the height of the 3D effect. The larger the value, the more complex and time-consuming the operations will be.</param>
+      <param name="type">Flag that indicates which mask to use in the convolution process.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.MaskConvolutionCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this method.</summary>
+      <returns>String that contains the name of this method.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.MaskConvolutionCommand.Angle">
+      <summary>Gets or sets the angle of apparent light source, in hundredths of degrees.</summary>
+      <value>Angle of apparent light source, in hundredths of degrees. Possible values range from -36000 to 36000.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.MaskConvolutionCommand.Depth">
+      <summary>Gets or sets the depth of the 3D effect.</summary>
+      <value>The depth of the 3D effect. (This value is divided internally by 100). This value is used as a multiplier for the individual mask values.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.MaskConvolutionCommand.Height">
+      <summary>Gets or sets the height of the 3D effect.</summary>
+      <value>Non-zero value greater than 2, that represents the height of the mask. This value determines the height of the 3D effect. The larger the value, the more complex and time-consuming the operations will be.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.MaskConvolutionCommand.Type">
+      <summary>Gets or sets the mask to use in the convolution process.</summary>
+      <value>Enumeration that indicates which mask to use in the convolution process.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.MatchHistogramCommand">
+      <summary>Transforms an image so that its histogram matches another images's histogram.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.MatchHistogramCommand.#ctor">
+      <summary>Initializes a new MatchHistogramCommand class object.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.MatchHistogramCommand.#ctor(Leadtools.RasterImage)">
+      <summary>Initializes a new MatchHistogramCommand class object with explicit parameters.</summary>
+      <param name="referenceImage">A reference to a RasterImage that contains the reference image for MatchHistogramCommand.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.MatchHistogramCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this class.</summary>
+      <returns>String that contains the name of this class.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.MatchHistogramCommand.ReferenceImage">
+      <summary>Gets or sets a reference to a RasterImage that contains the reference image for this MatchHistogramCommand.</summary>
+      <value>This image's histogram will be a reference for matching MatchHistogramCommand.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.MosaicCommand">
+      <summary>Imposes a mosaic effect on an image by dividing the image into tiles of a specified size and changing the color of all pixels in each tile to the average color of pixels within the tile.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.MosaicCommand.#ctor">
+      <summary>Initializes a new MosaicCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.MosaicCommand.#ctor(System.Int32)">
+      <summary>Initializes a new MosaicCommand class object with explicit parameters.</summary>
+      <param name="dimension">Dimensions of the tiles (dimension x dimension), in pixels. Only positive values are accepted.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.MosaicCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.MosaicCommand.Dimension">
+      <summary>Gets or sets the dimensions of the tiles (Dimension x Dimension), in pixels.</summary>
+      <value>Dimensions of the tiles (Dimension x Dimension), in pixels. Only positive values are accepted.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.MotionBlurCommand">
+      <summary>Applies a filter, which creates the illusion of movement in an image.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.MotionBlurCommand.#ctor">
+      <summary>Initializes a new MotionBlurCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.MotionBlurCommand.#ctor(System.Int32,System.Int32,System.Boolean)">
+      <summary>Initializes a new MotionBlurCommand class object with explicit parameters.</summary>
+      <param name="dimension">Size of the blur effect, in pixels. This parameter only accepts positive values.</param>
+      <param name="angle">Value that represents the direction of the motion, in hundredths of a degree (+/-) This value can be a number from 0 to 36000. If the value is positive, the motion will be clockwise. If the value is negative, the motion is counter-clockwise.</param>
+      <param name="uniDirection">Flag that indicates whether the motion extends only in one direction. Possible values are:</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.MotionBlurCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.MotionBlurCommand.Angle">
+      <summary>Gets or sets a value that represents the direction of the motion.</summary>
+      <value>Value that represents the direction of the motion, in hundredths of a degree (+/-) This value can be a number from 0 to 36000. If the value is positive, the motion will be clockwise. If the value is negative, the motion is counter-clockwise.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.MotionBlurCommand.Dimension">
+      <summary>Gets or sets the size of the blur effect.</summary>
+      <value>Size of the blur effect, in pixels. This property only accepts positive values.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.MotionBlurCommand.UniDirection">
+      <summary>Gets or sets a flag that indicates whether the motion extends only in one direction.</summary>
+      <value>Flag that indicates whether the motion extends only in one direction. Possible values are:</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.ObjectInformationCommand">
+      <summary>Determines the position, orientation and roundness of the object in the image.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.ObjectInformationCommand.#ctor">
+      <summary>Initializes a new ObjectInformationCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.ObjectInformationCommand.#ctor(System.Boolean)">
+      <summary>Initializes a new ObjectInformationCommand class object with explicit parameters.</summary>
+      <param name="weighted">Flag that indicates the weighting factor. If this parameter is true, then the pixel intensity value (color) will be used as a weighting factor. If this parameter is false, then all non-zero pixels will have the same weight.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.ObjectInformationCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.ObjectInformationCommand.Angle">
+      <summary>A property to be updated with the orientation angle of the object's axis.</summary>
+      <value>A property to be updated with the orientation angle of the object's axis. Valid values are in degrees from -180.00 to 180.00, with negative values produced from clockwise rotation and where 0 is the horizon.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.ObjectInformationCommand.CenterOfMass">
+      <summary>This property is updated with the object's center of mass.</summary>
+      <value>LeadPoint structure that is updated with the object's center of mass.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.ObjectInformationCommand.Roundness">
+      <summary>This property is updated with the object's roundness (compactness).</summary>
+      <value>A property to be updated with the object's roundness (compactness). This ratio will be 0 for a line and 100 for a circle.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.ObjectInformationCommand.Weighted">
+      <summary>Gets or sets a value that indicates the weighting factor.</summary>
+      <value>Value that indicates the weighting factor. If this property is true, then the pixel intensity value (color) will be used as a weighting factor. If this property set to false, then all non-zero pixels will have the same weight.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.OffsetCommand">
+      <summary>Shifts the image data horizontally and vertically.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.OffsetCommand.#ctor">
+      <summary>Initializes a new OffsetCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.OffsetCommand.#ctor(System.Int32,System.Int32,Leadtools.RasterColor,Leadtools.ImageProcessing.Effects.OffsetCommandType)">
+      <summary>Initializes a new OffsetCommand class object with explicit parameters.</summary>
+      <param name="horizontalShift">Horizontal shift of the image, in pixels.</param>
+      <param name="verticalShift">Vertical shift of the image, in pixels.</param>
+      <param name="backColor">Fill color for the exposed areas.</param>
+      <param name="type">Flags that indicate how to handle any exposed areas resulting from the image shift.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.OffsetCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.OffsetCommand.BackColor">
+      <summary>Gets or sets the fill color for the exposed areas.</summary>
+      <value>Fill color for the exposed areas.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.OffsetCommand.HorizontalShift">
+      <summary>Gets or sets the horizontal shift of the image, in pixels.</summary>
+      <value>Horizontal shift of the image, in pixels.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.OffsetCommand.Type">
+      <summary>Gets or sets a value that indicates how to handle any exposed areas resulting from the image shift.</summary>
+      <value>Flags that indicate how to handle any exposed areas resulting from the image shift.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.OffsetCommand.VerticalShift">
+      <summary>Gets or sets the vertical shift of the image, in pixels.</summary>
+      <value>Vertical shift of the image, in pixels.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.OilifyCommand">
+      <summary>Applies an oil-painting effect to the image.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.OilifyCommand.#ctor">
+      <summary>Initializes a new OilifyCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.OilifyCommand.#ctor(System.Int32)">
+      <summary>Initializes a new OilifyCommand class object with explicit parameters.</summary>
+      <param name="dimension">Dimensions of the neighborhood used for filtering (dimension x dimension), in pixels. Only positive values are accepted.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.OilifyCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.OilifyCommand.Dimension">
+      <summary>Gets or sets the dimensions of the neighborhood used for filtering (Dimension x Dimension), in pixels.</summary>
+      <value>Dimensions of the neighborhood used for filtering (Dimension x Dimension), in pixels. Only positive values are accepted.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.PicturizeListCommand">
+      <summary>Picturizes the image using a specific thumbnail image.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.PicturizeListCommand.#ctor">
+      <summary>Initializes a new PicturizeListCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.PicturizeListCommand.#ctor(System.Int32,System.Int32,System.Int32)">
+      <summary>Initializes a new PicturizeListCommand class object with explicit parameters.</summary>
+      <param name="cellWidth">Width of the thumbnail image. This parameter only accepts positive values.</param>
+      <param name="cellHeight">Height of the thumbnail image. This parameter only accepts positive values.</param>
+      <param name="lightnessFactor">Value that represents how much to lighten the thumbnail image. Valid values are between 0 and 1000. This value is divided internally by 1000. Values between 0 and 499 darken the image. Values between 500 and 1000 lighten the image.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.PicturizeListCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.PicturizeListCommand.CellHeight">
+      <summary>Gets or sets the height of the thumbnail image.</summary>
+      <value>Height of the thumbnail image. This property only accepts positive values.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.PicturizeListCommand.CellWidth">
+      <summary>Gets or sets the width of the thumbnail image.</summary>
+      <value>Width of the thumbnail image. This property only accepts positive values.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.PicturizeListCommand.LightnessFactor">
+      <summary>Gets or sets a value that represents how much to lighten the thumbnail image.</summary>
+      <value>Value that represents how much to lighten the thumbnail image. Valid values are between 0 and 1000. This value is divided internally by 1000. Values between 0 and 499 darken the image. Values between 500 and 1000 lighten the image.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.PicturizeSingleCommand">
+      <summary>Picturizes the image using a specific thumbnail image.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.PicturizeSingleCommand.#ctor">
+      <summary>Initializes a new PicturizeSingleCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.PicturizeSingleCommand.#ctor(Leadtools.RasterImage,System.Int32,System.Int32,System.Int32)">
+      <summary>Initializes a new PicturizeSingleCommand class object with explicit parameters.</summary>
+      <param name="thumbImage">RasterImage object that references the image used to create the thumbnail.</param>
+      <param name="cellWidth">Width of the thumbnail image. This parameter only accepts positive values.</param>
+      <param name="cellHeight">Height of the thumbnail image. This parameter only accepts positive values.</param>
+      <param name="lightnessFactor">Value that represents how much to lighten the thumbnail image. Valid values are between 0 and 1000. This value is divided internally by 1000. Values between 0 and 499 darken the image. Values between 500 and 1000 lighten the image.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.PicturizeSingleCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.PicturizeSingleCommand.CellHeight">
+      <summary>Gets or sets the height of the thumbnail image.</summary>
+      <value>Height of the thumbnail image. This property only accepts positive values.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.PicturizeSingleCommand.CellWidth">
+      <summary>Gets or sets the width of the thumbnail image.</summary>
+      <value>Width of the thumbnail image. This property only accepts positive values.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.PicturizeSingleCommand.LightnessFactor">
+      <summary>Gets or sets a value that represents how much to lighten the thumbnail image.</summary>
+      <value>Value that represents how much to lighten the thumbnail image. Valid values are between 0 and 1000. This value is divided internally by 1000. Values between 0 and 499 darken the image. Values between 500 and 1000 lighten the image.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.PicturizeSingleCommand.ThumbImage">
+      <summary>Gets or sets a RasterImage object that references the image used to create the thumbnail.</summary>
+      <value>RasterImage object that references the image used to create the thumbnail.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.RegionContourPointsCommand">
+      <summary>Gets the contour coordinates of a region.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.RegionContourPointsCommand.#ctor">
+      <summary>Initializes a new RegionContourPointsCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.RegionContourPointsCommand.#ctor(Leadtools.RasterRegionXForm)">
+      <summary>Initializes a new RegionContourPointsCommand class object with explicit parameters.</summary>
+      <param name="xForm">RasterRegionXForm object that contains information used to translate between display coordinates and image coordinates. If you specify null in this parameter, the scalar value defaults to 1, the offsets default to 0, and the view perspective defaults to the image's view perspective.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.RegionContourPointsCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.RegionContourPointsCommand.Flags">
+      <summary>Gets or sets the required contour points.</summary>
+      <value>Value that represent the required contour points.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.RegionContourPointsCommand.Points">
+      <summary>Gets or sets an array that contains the coordinate points of the contour for the region.</summary>
+      <value>An array that that contains the coordinate points of the contour for the region. A memory buffer for this array is allocated by the command.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.RegionContourPointsCommand.XForm">
+      <summary>Gets or sets a RasterRegionXForm object used to translate between display coordinates and image coordinates.</summary>
+      <value>RasterRegionXForm object used to translate between display coordinates and image coordinates. If you specify null in this property, the scalar value defaults to 1, the offsets default to 0, and the view perspective defaults to the image's view perspective.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.RegionHolesRemovalCommand">
+      <summary>Removes all the holes in a region. This command is available in the Document/Medical Toolkits.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.RegionHolesRemovalCommand.#ctor">
+      <summary>Initializes a new RegionHolesRemovalCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.RegionHolesRemovalCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.ResizeRegionCommand">
+      <summary>Resizes an image region by a specific number of pixels.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.ResizeRegionCommand.#ctor">
+      <summary>Initializes a new ResizeRegionCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.ResizeRegionCommand.#ctor(System.Int32,Leadtools.ImageProcessing.Effects.ResizeRegionCommandType,System.Boolean)">
+      <summary>Initializes a new ResizeRegionCommand class object with explicit parameters.</summary>
+      <param name="dimension">Number of pixels by which to resize the region. This parameter only accepts positive values.</param>
+      <param name="type">Value that indicates whether to contract or expand the image region.</param>
+      <param name="asFrame">Value that indicates whether to create a frame associated with the resized image region. If this parameter is true, then the command creates a frame of thickness "dimension" for the resized region. If the type parameter is ResizeRegionCommandType.ExpandRegion, the frame created will exist outside the boundaries of the resized region. If the type parameter is ResizeRegionCommandType.ContractRegion, the frame will be within the boundaries of the resized region. If this parameter is false then the command resizes the region only, and does not create a frame.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.ResizeRegionCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.ResizeRegionCommand.AsFrame">
+      <summary>Gets or sets a value that indicates whether to create a frame associated with the resized image region.</summary>
+      <value>Value that indicates whether to create a frame associated with the resized image region. If this property is true, then the command creates a frame with the thickness set in the Dimension property for the resized region. If the Type property is ResizeRegionCommandType.ExpandRegion, the frame created will exist outside the boundaries of the resized region. If the Type property is ResizeRegionCommandType.ContractRegion, the frame will be within the boundaries of the resized region. If this property is false then the command resizes the region only, and does not create a frame.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.ResizeRegionCommand.Dimension">
+      <summary>Gets or sets the number of pixels by which to resize the region.</summary>
+      <value>Number of pixels by which to resize the region. This property only accepts positive values.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.ResizeRegionCommand.Type">
+      <summary>Gets or sets a value that indicates whether to contract or expand the image region.</summary>
+      <value>Value that indicates whether to contract or expand the image region.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.SharpenCommand">
+      <summary>Increases or decreases the sharpness of a specific image.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.SharpenCommand.#ctor">
+      <summary>Initializes a new SharpenCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.SharpenCommand.#ctor(System.Int32)">
+      <summary>Initializes a new SharpenCommand class object with explicit parameters.</summary>
+      <param name="sharpness">The amount to change the sharpness. Valid values range from -1000 to +1000. Negative sharpness values decrease the sharpness of the image. Specify -1000 for minimum sharpness. Positive sharpness values increase the sharpness. Specify +1000 for maximum sharpness.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.SharpenCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.SharpenCommand.Sharpness">
+      <summary>Gets or sets the amount to change the sharpness.</summary>
+      <value>The amount to change the sharpness. Valid values range from -1000 to +1000. Negative sharpness values decrease the sharpness of the image. Specify -1000 for minimum sharpness. Positive sharpness values increase the sharpness. Specify +1000 for maximum sharpness.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.SkeletonCommand">
+      <summary>Finds the skeleton of objects or regions in the image. This command is available in the Document/Medical Toolkits.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.SkeletonCommand.#ctor">
+      <summary>Initializes a new SkeletonCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.SkeletonCommand.#ctor(System.Int32)">
+      <summary>Initializes a new SkeletonCommand class object with explicit parameters.</summary>
+      <param name="threshold">Threshold value used to binarize the image before finding the skeleton; this parameter is ignored if the image is a binary image. This parameter only accepts positive values.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.SkeletonCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.SkeletonCommand.Threshold">
+      <summary>Gets or sets the threshold value used to binarize the image before finding the skeleton.</summary>
+      <value>Threshold value used to binarize the image before finding the skeleton. This property is ignored if the image is a binary image. This property only accepts positive values.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.SmoothEdgesCommand">
+      <summary>Smoothes the rough edges in the image.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.SmoothEdgesCommand.#ctor">
+      <summary>Initializes a new SmoothEdgesCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.SmoothEdgesCommand.#ctor(System.Int32,System.Int32)">
+      <summary>Initializes a new SmoothEdgesCommand class object with explicit parameters.</summary>
+      <param name="amount">This is a percentage value that indicates blur size. 0 means no blurring and 100 means total blurring.</param>
+      <param name="threshold">Threshold value used to determine which pixels are edge pixels. If the difference determined for a pixel is greater than this value, the pixel is an edge. Valid values range from 0 through 255.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.SmoothEdgesCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.SmoothEdgesCommand.Amount">
+      <summary>Gets or sets a percentage value that indicates blur size.</summary>
+      <value>Percentage value that indicates blur size. 0 means no blurring and 100 means total blurring.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.SmoothEdgesCommand.Threshold">
+      <summary>Gets or sets the threshold value used to determine which pixels are edge pixels.</summary>
+      <value>Threshold value used to determine which pixels are edge pixels. If the difference determined for a pixel is greater than this value, the pixel is an edge. Valid values range from 0 through 255.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.SpatialFilterCommand">
+      <summary>Imposes a spatial filter on an image. This command is available in the Document/Medical Toolkits.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.SpatialFilterCommand.#ctor">
+      <summary>Initializes a new SpatialFilterCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.SpatialFilterCommand.#ctor(System.Int32,System.Int32,System.Int32[])">
+      <summary>Initializes a new SpatialFilterCommand class object with explicit parameters.</summary>
+      <param name="divisor">Number used to divide the sum of weighted values.</param>
+      <param name="bias">Number added to the weighted average.</param>
+      <param name="matrix">The array of weighting factors. The factors apply to pixels in the neighborhood read left to right and top to bottom, as shown below:</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.SpatialFilterCommand.#ctor(Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined)">
+      <summary>Initializes a new SpatialFilterCommand class object with explicit parameters.</summary>
+      <param name="predefined">Value that represents a predefined spatial filters.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.SpatialFilterCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.SpatialFilterCommand.Bias">
+      <summary>Gets or sets the number added to the weighted average.</summary>
+      <value>Number added to the weighted average.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.SpatialFilterCommand.Dimension">
+      <summary>This property is updated with the number of pixels on one side of the square (neighborhood) used for averaging.</summary>
+      <value>Number of pixels on one side of the square (neighborhood) used for averaging. Usually an odd number such as 3 or 5 is used. If you specify an even number, the target pixel is the one northwest of the midpoint. This property only accepts positive values.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.SpatialFilterCommand.Divisor">
+      <summary>Gets or sets the number used to divide the sum of weighted values.</summary>
+      <value>Number used to divide the sum of weighted values.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.SpatialFilterCommand.Matrix">
+      <summary>Gets or sets the array of weighting factors.</summary>
+      <value>The array of weighting factors. The factors apply to pixels in the neighborhood read left to right and top to bottom in the ABC order shown below:</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.SpatialFilterCommand.MatrixLength">
+      <summary>Get or set the length of matrix array</summary>
+      <value>An Int32 that specifies the length of the array in matrix property</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.StatisticsInformationCommand">
+      <summary>Returns statistical information about the image.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.StatisticsInformationCommand.#ctor">
+      <summary>Initializes a new StatisticsInformationCommand with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.StatisticsInformationCommand.#ctor(Leadtools.RasterColorChannel,System.Int32,System.Int32)">
+      <summary>Initializes a new StatisticsInformationCommand with explicit parameters.</summary>
+      <param name="channel">The channel for which to get the information. This value is ignored if the image is 12 or 16-bit grayscale.</param>
+      <param name="start">Indicates the beginning color value of the range for the evaluation. This property only accepts positive values.</param>
+      <param name="end">Indicates the ending color value of the range for the evaluation. This property only accepts positive values.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.StatisticsInformationCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this method.</summary>
+      <returns>string that is the name of this method.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.StatisticsInformationCommand.Channel">
+      <summary>Gets or sets the channel for which to get the information.</summary>
+      <value>The channel for which to get the information. This value is ignored if the image is 12 or 16-bit grayscale.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.StatisticsInformationCommand.End">
+      <summary>Gets or sets the ending color value of the range for the evaluation.</summary>
+      <value>Indicates the ending color value of the range for the evaluation. This property only accepts positive values.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.StatisticsInformationCommand.Maximum">
+      <summary>Gets the Maximum value found.</summary>
+      <value>Gets the Maximum value found.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.StatisticsInformationCommand.Mean">
+      <summary>Gets the mean value found.</summary>
+      <value>Get the mean value found.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.StatisticsInformationCommand.Median">
+      <summary>Gets the median value found.</summary>
+      <value>Gets the median value found.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.StatisticsInformationCommand.Minimum">
+      <summary>Gets the Minimum value found.</summary>
+      <value>Gets the Minimum value found.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.StatisticsInformationCommand.Percent">
+      <summary>Gets the percent value of selected pixel to the whole pixels in the image, in hundredths of percent.</summary>
+      <value>Get the percent value of selected pixel to the whole pixels in the image, in hundredths of percent.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.StatisticsInformationCommand.PixelCount">
+      <summary>Gets the Pixel number value found.</summary>
+      <value>Gets the Pixel number value found.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.StatisticsInformationCommand.StandardDeviation">
+      <summary>Gets the standard deviation value found.</summary>
+      <value>get the standard deviation value found.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.StatisticsInformationCommand.Start">
+      <summary>Gets or sets the beginning color value of the range for the evaluation.</summary>
+      <value>Indicates the beginning color value of the range for the evaluation. This property only accepts positive values.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.StatisticsInformationCommand.TotalPixelCount">
+      <summary>Gets the whole image Pixel number value found.</summary>
+      <value>Gets the whole image Pixel number value found.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.TextureAlphaBlendCommand">
+      <summary>Combines image data from two images with feathering and constant opacity; by combining the two images with a variable opacity that depends on a fade mask then combine the result with the destination image with a constant opacity.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.TextureAlphaBlendCommand.#ctor">
+      <summary>Initializes a new TextureAlphaBlendCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.TextureAlphaBlendCommand.#ctor(Leadtools.RasterImage,Leadtools.LeadPoint,Leadtools.LeadRect,System.Int32,Leadtools.RasterImage,Leadtools.RasterImage,Leadtools.LeadPoint)">
+      <summary>Initializes a new TextureAlphaBlendCommand class object with explicit parameters.</summary>
+      <param name="sourceImage">RasterImage object that references the source image.</param>
+      <param name="sourcePoint">LeadPoint structure that contains the origin of the source rectangle.</param>
+      <param name="destinationRectangle">LeadRect structure that contains the destination rectangle.</param>
+      <param name="opacity">Opacity value used when combining the areas from the result of feathering and destination images. Valid values range from 0 to 255.</param>
+      <param name="maskImage">RasterImage object that references the fade mask, if you want to combine the two images just with opacity set this parameter to null.</param>
+      <param name="underlayImage">RasterImage that references the image to be used as the underlying image. The command will use this image to underlay the mask image. You could ignore this parameter effect by passing null.</param>
+      <param name="underlayOffset">References the underlay image offset with respect to the destination image. The command will use this point to calculate the parts of the underlay image that will be applied to the mask image. Using this point gives the user the ability to provide the feel of continuous texture when applying this command to neighboring parts inside the destination image using the same or different mask. If underlayImage is null also set this parameter to null.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.TextureAlphaBlendCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.TextureAlphaBlendCommand.DestinationRectangle">
+      <summary>Gets or sets a LeadRect structure that contains the destination rectangle.</summary>
+      <value>LeadRect structure that contains the destination rectangle.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.TextureAlphaBlendCommand.MaskImage">
+      <summary>Gets or sets the RasterImage object that references the fade mask.</summary>
+      <value>RasterImage object that references the fade mask. If you want to combine the two images just with opacity set this property to null.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.TextureAlphaBlendCommand.Opacity">
+      <summary>Gets or set the opacity value used when combining the areas from the result of feathering and destination images.</summary>
+      <value>Opacity value used when combining the areas from the result of feathering and destination images. This value ranges from 0 to 255.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.TextureAlphaBlendCommand.SourceImage">
+      <summary>RasterImage object that references the source image.</summary>
+      <value>RasterImage object that references the source image.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.TextureAlphaBlendCommand.SourcePoint">
+      <summary>LeadPoint structure that contains the origin of the source rectangle.</summary>
+      <value>LeadPoint structure that contains the origin of the source rectangle.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.TextureAlphaBlendCommand.UnderlayImage">
+      <summary>Gets or sets an RasterImage object that references the image to be used as the underlying image.</summary>
+      <value>RasterImage object that references the image to be used as the underlying image. The command will use this image to underlay the mask image. You could ignore this property effect by passing null.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.TextureAlphaBlendCommand.UnderlayOffset">
+      <summary>LeadPoint structure that contains the underlay image offset with respect to the destination image.</summary>
+      <value>LeadPoint structure that contains the underlay image offset with respect to the destination image. The command will use this point to calculate the parts of the underlay image that will be applied to the mask image. Using this point will give the user the ability to give the feel of continuous texture when applying this method to neighboring parts inside the destination image using the same or different mask. If the UnderlayImage property is set to null also set this property to null.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.UnsharpMaskCommand">
+      <summary>Sharpens the image by applying the unsharp mask.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.UnsharpMaskCommand.#ctor">
+      <summary>Initializes a new UnsharpMaskCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.UnsharpMaskCommand.#ctor(System.Int32,System.Int32,System.Int32,Leadtools.ImageProcessing.Effects.UnsharpMaskCommandColorType)">
+      <summary>Initializes a new UnsharpMaskCommand class object with explicit parameters.</summary>
+      <param name="amount">Value that represents an adjustment factor. This is a percentage.</param>
+      <param name="radius">Value that indicates the size of the neighborhood used for blurring each pixel of the image.</param>
+      <param name="threshold">Value that indicates the threshold for modifying the original value of the pixel. If the difference in the original pixel value and the blurred pixel value is greater than the threshold value, the original pixel value will be modified.</param>
+      <param name="colorType">Flag that indicates the color space in which to apply the mask.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.UnsharpMaskCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.UnsharpMaskCommand.Amount">
+      <summary>Gets or sets a value that represents an adjustment factor. This is a percentage.</summary>
+      <value>Value that represents an adjustment factor. This is a percentage.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.UnsharpMaskCommand.ColorType">
+      <summary>Gets or sets a value that indicates the color space in which to apply the mask.</summary>
+      <value>Value that indicates the color space in which to apply the mask.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.UnsharpMaskCommand.Radius">
+      <summary>Gets or sets a value that indicates the size of the neighborhood used for blurring each pixel of the image.</summary>
+      <value>Value that indicates the size of the neighborhood used for blurring each pixel of the image.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.UnsharpMaskCommand.Threshold">
+      <summary>Gets or sets a value that indicates the threshold for modifying the original value of the pixel.</summary>
+      <value>Value that indicates the threshold for modifying the original value of the pixel. If the difference in the original pixel value and the blurred pixel value is greater than the threshold value, the original pixel value will be modified.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.UserFilterCommand">
+      <summary>Filters the image based on a user-defined filter / mask. This command is similar to the spatial and binary filter commands.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.UserFilterCommand.#ctor">
+      <summary>Initializes a new UserFilterCommand class object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.UserFilterCommand.#ctor(System.Int32,System.Int32,Leadtools.LeadPoint,System.Int32,System.Int32,Leadtools.ImageProcessing.Effects.UserFilterCommandType,System.Int32[])">
+      <summary>Initializes a new UserFilterCommand class object with explicit parameters.</summary>
+      <param name="filterWidth">Number of columns in the user-defined array (mask). This parameter only accepts positive values.</param>
+      <param name="filterHeight">Number of rows in the user-defined array (mask). This parameter only accepts positive values.</param>
+      <param name="centerPoint">Any two-dimensional position of the matrix array, to be used as the matrix (mask)center.</param>
+      <param name="divisor">Value used to divide the final result of the output. This must be a non-zero value. If you want to use floating point values for the matrix elements and the divisor, multiply the matrix elements and the divisor with the same value (for example, 10, 100, 1000). This parameter only accepts positive values.</param>
+      <param name="offset">Value used to offset the final result of the output.</param>
+      <param name="type">Flag that indicates the type of operation.</param>
+      <param name="matrix">Array of (filterWidth \* filterHeight) integers containing the user-defined matrix (mask). The elements are stored in row order (first row, second row, etc).</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Effects.UserFilterCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that contains the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.UserFilterCommand.CenterPoint">
+      <summary>Gets or sets a point structure that contains a two-dimensional position of the Matrix array, to be used as the matrix (mask)center.</summary>
+      <value>LeadPoint structure that contains a two-dimensional position of the Matrix array, to be used as the matrix (mask)center.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.UserFilterCommand.Divisor">
+      <summary>Gets or sets a value used to divide the final result of the output.</summary>
+      <value>Value used to divide the final result of the output. This must be a non-zero value. If you want to use floating point values for the matrix elements and the divisor, multiply the matrix elements and the divisor with the same value (for example, 10, 100, 1000). This property only accepts positive values.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.UserFilterCommand.FilterHeight">
+      <summary>Gets or sets the number of rows in the user-defined array (mask).</summary>
+      <value>Number of rows in the user-defined array (mask). This property only accepts positive values.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.UserFilterCommand.FilterWidth">
+      <summary>Gets or sets the number of columns in the user-defined array (mask).</summary>
+      <value>Number of columns in the user-defined array (mask). This property only accepts positive values.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.UserFilterCommand.Matrix">
+      <summary>Gets or sets an array of (FilterWidth \* FilterHeight) integers containing the user-defined matrix (mask). The elements are stored in row order (first row, second row, etc).</summary>
+      <value>Array of (FilterWidth \* FilterHeight) integers containing the user-defined matrix (mask). The elements are stored in row order (first row, second row, etc).</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.UserFilterCommand.MatrixLength">
+      <summary>Get or set the length of matrix array</summary>
+      <value>An Int32 that specifies the length of the array in matrix property</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.UserFilterCommand.Offset">
+      <summary>Gets or sets a value used to offset the final result of the output.</summary>
+      <value>Value used to offset the final result of the output.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Effects.UserFilterCommand.Type">
+      <summary>Gets or sets a flag that indicates the type of operation.</summary>
+      <value>Flag that indicates the type of operation.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.AntiAliasingCommandType">
+      <summary>Enumerated values that indicate the type of anti-aliasing filter to use.</summary>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.AntiAliasingCommandType.Type1">
+      <summary>Anti-alias the image vertically and horizontally. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.AntiAliasingCommandType.Type2">
+      <summary>Anti-alias the image in all directions. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.AntiAliasingCommandType.Type3">
+      <summary>Anti-alias the image in all directions. The filter used for this option is different from the filter used for the Type2 option. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.AntiAliasingCommandType.Diagonal">
+      <summary>Anti-alias the image diagonally. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.AntiAliasingCommandType.Horizontal">
+      <summary>Anti-alias the image horizontally. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.AntiAliasingCommandType.Vertical">
+      <summary>Anti-alias the image vertically. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.BinaryFilterCommandPredefined">
+      <summary>Enumerated values that represent the predefined binary filter to use.</summary>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.BinaryFilterCommandPredefined.ErosionOmniDirectional">
+      <summary>Shrinks black objects in the image in all directions. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.BinaryFilterCommandPredefined.ErosionHorizontal">
+      <summary>Shrinks black objects in the image horizontally. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.BinaryFilterCommandPredefined.ErosionVertical">
+      <summary>Shrinks black objects in the image vertically. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.BinaryFilterCommandPredefined.ErosionDiagonal">
+      <summary>Shrinks black objects in the image diagonally. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.BinaryFilterCommandPredefined.DilationOmniDirectional">
+      <summary>Shrinks black objects in the image in all directions. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.BinaryFilterCommandPredefined.DilationHorizontal">
+      <summary>Enlarges black objects in the image horizontally. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.BinaryFilterCommandPredefined.DilationVertical">
+      <summary>Enlarges black objects in the image vertically. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.BinaryFilterCommandPredefined.DilationDiagonal">
+      <summary>Enlarges black objects in the image diagonally. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.CombineCommandFlags">
+      <summary>Enumeration that indicates the treatment of the source, treatment of the destination, the operation to use when combining the data, and the treatment of the resulting image. The flags apply only to the defined rectangles (not necessarily the whole image).This enumeration has a FlagsAttribute attribute that allows a bitwise combination of its member values.</summary>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.ResultMaster">
+      <summary>Perform the operation on all channels.</summary>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.SourceNop">
+      <summary>No change. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.SourceMaster">
+      <summary>Perform the operation on all channels. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.DestinationMaster">
+      <summary>Perform the operation on all channels. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.DestinationNop">
+      <summary>No change. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.OperationAnd">
+      <summary>Combine each set of bytes using a bitwise AND. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.ResultNop">
+      <summary>No change. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.SourceNot">
+      <summary>Invert the color, resulting in its complement. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.Source0">
+      <summary>Change all bits to 0. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.Source1">
+      <summary>Change all bits to 1. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.DestinationNot">
+      <summary>Invert the color, resulting in its complement. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.Destination0">
+      <summary>Change all bits to 0. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.Destination1">
+      <summary>Change all bits to 1. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.OperationOr">
+      <summary>Combine each set of bytes using a bitwise OR. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.SourceCopy">
+      <summary>Copy source to destination. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.OperationXor">
+      <summary>Combine each set of bytes using a bitwise exclusive OR (^). </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.OperationAdd">
+      <summary>Add the byte values, allowing a maximum of 255. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.OperationSubtractSource">
+      <summary>Subtract the source from the destination, allowing a minimum of 0. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.OperationSubtractDestination">
+      <summary>Subtract the destination from the source, allowing a minimum of 0. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.OperationMultiply">
+      <summary>Multiply the byte values, allowing a maximum of 255. The result is calculated as follows: result = (source * destination) / 255. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.OperationDivideSource">
+      <summary>Divide the destination by the source. If source &gt; 0, then the result is calculated as follows: result = min( (destination / source) * 255, 255 ). Otherwise, if source = 0, then result = 255. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.OperationDivideDestination">
+      <summary>Divide the source by the destination. If dest &gt; 0, then the result is calculated as follows: result = min( (source / destination) * 255, 255 ). Otherwise, if destination = 0, then result = 255. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.OperationAverage">
+      <summary>Use the average of the two values. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.OperationMinimum">
+      <summary>Use the lesser of the two values. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.OperationMaximum">
+      <summary>Use the greater of the two values. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.AbsoluteDifference">
+      <summary>Calculate the Absolute difference between the two values. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.ResultNot">
+      <summary>Invert the color, resulting in its complement. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.Result0">
+      <summary>Change all bits to 0. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.Result1">
+      <summary>Change all bits to 1. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.SourceRed">
+      <summary>Perform the operation on the red channel. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.SourceGreen">
+      <summary>Perform the operation on the green channel. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.SourceBlue">
+      <summary>Perform the operation on the blue channel. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.DestinationRed">
+      <summary>Perform the operation on the red channel. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.DestinationGreen">
+      <summary>Perform the operation on the green channel. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.DestinationBlue">
+      <summary>Perform the operation on the blue channel. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.ResultRed">
+      <summary>Perform the operation on the red channel. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.ResultGreen">
+      <summary>Perform the operation on the green channel. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.ResultBlue">
+      <summary>Perform the operation on the blue channel. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CombineCommandFlags.RawCombine">
+      <summary>Perform a raw combine. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.ContourFilterCommandType">
+      <summary>This enumeration controls the resulting image by telling the method what process to complete before returning.</summary>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.ContourFilterCommandType.Thin">
+      <summary>return after the thinning algorithm. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.ContourFilterCommandType.LinkBlackWhite">
+      <summary>return after contour linking, using only black and white. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.ContourFilterCommandType.LinkGray">
+      <summary>return after contour linking, using 256 grayscale. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.ContourFilterCommandType.LinkColor">
+      <summary>return after contour linking, using colors. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.ContourFilterCommandType.ApproxColor">
+      <summary>return after line segment approximation, using colors. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.CubismCommandFlags">
+      <summary>Flags that indicate the background color, cube shape and cube orientation.This enumeration has a FlagsAttribute attribute that allows a bitwise combination of its member values.</summary>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CubismCommandFlags.None">
+      <summary>No change. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CubismCommandFlags.Background">
+      <summary>Use the image itself as the background. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CubismCommandFlags.Color">
+      <summary>Use the color in the Color property (or in the fillColor parameter in the Constructor) as the background color. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CubismCommandFlags.Square">
+      <summary>Cubes will have square shape. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CubismCommandFlags.Rectangle">
+      <summary>Cubes will have rectangular shape. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CubismCommandFlags.Random">
+      <summary>Cubes will have random orientation. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CubismCommandFlags.Oriented">
+      <summary>All cubes will have the orientation specified by the Angle property (or the angle parameter of the Constructor). </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.CurvePointsType">
+      <summary>Enumeration that indicates the method to be used to update the curve array.</summary>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CurvePointsType.Curve">
+      <summary>Fill the curve array with the best curve that passes through the user points. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.CurvePointsType.Linear">
+      <summary>Fill the curve array with lines that pass through the user points. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.DeinterlaceCommandFlags">
+      <summary>Flags that indicate how to deinterlace the image and whether to remove odd lines or even lines.This enumeration has a FlagsAttribute attribute that allows a bitwise combination of its member values.</summary>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.DeinterlaceCommandFlags.None">
+      <summary>No change. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.DeinterlaceCommandFlags.Normal">
+      <summary>Deinterlace the image by copying the data line into the removed lines. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.DeinterlaceCommandFlags.Smooth">
+      <summary>Deinterlace the image by averaging the data lines and copying the averaged data into the removed lines. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.DeinterlaceCommandFlags.Odd">
+      <summary>Remove the odd lines. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.DeinterlaceCommandFlags.Even">
+      <summary>Remove the even lines. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.DisplacementCommandFlags">
+      <summary>Flags that indicate how to handle exposed areas, and the way to use the displacement map image.This enumeration has a FlagsAttribute attribute that allows a bitwise combination of its member values.</summary>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.DisplacementCommandFlags.Color">
+      <summary>Fill any exposed areas with fillColor. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.DisplacementCommandFlags.Tile">
+      <summary>Repeat the displacement map image to cover the image area. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.DisplacementCommandFlags.Repeat">
+      <summary>Stretch the image edges to fill the exposed area. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.DisplacementCommandFlags.NoChange">
+      <summary>Leave the exposed area as is, without changing it. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.DisplacementCommandFlags.WrapAround">
+      <summary>Fill any exposed area with the opposite side of the image. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.DisplacementCommandFlags.StretchToFit">
+      <summary>Stretch the displacement map image over the entire image area. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.EdgeDetectEffectCommandType">
+      <summary>Flag that indicates the type of edge to generate.</summary>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.EdgeDetectEffectCommandType.Smooth">
+      <summary>Generate softer (smoother) edges. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.EdgeDetectEffectCommandType.Solid">
+      <summary>Generate rougher edges. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.EdgeDetectorCommandType">
+      <summary>Flag that indicates the type of edge to generate.</summary>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.EdgeDetectorCommandType.SobelVertical">
+      <summary>Detect the vertical edges. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.EdgeDetectorCommandType.SobelHorizontal">
+      <summary>Detect the horizontal edges. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.EdgeDetectorCommandType.SobelBoth">
+      <summary>Detect horizontal and vertical edges. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.EdgeDetectorCommandType.PrewittVertical">
+      <summary>Detect the vertical edges. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.EdgeDetectorCommandType.PrewittHorizontal">
+      <summary>Detect the horizontal edges. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.EdgeDetectorCommandType.PrewittBoth">
+      <summary>Detect horizontal and vertical edges. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.EdgeDetectorCommandType.Laplace1">
+      <summary>Detect vertical and horizontal edges. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.EdgeDetectorCommandType.Laplace2">
+      <summary>Detect general edges </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.EdgeDetectorCommandType.Laplace3">
+      <summary>Detect general edges. (The filter used for this option is different than the filter used for the Laplace2 filter.) </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.EdgeDetectorCommandType.LaplaceDiagonal">
+      <summary>Detect the diagonal edges. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.EdgeDetectorCommandType.LaplaceHorizontal">
+      <summary>Detect the horizontal edges. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.EdgeDetectorCommandType.LaplaceVertical">
+      <summary>Detect the vertical edges. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.EdgeDetectorCommandType.GradientNorth">
+      <summary>Detect north edges. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.EdgeDetectorCommandType.GradientNorthEast">
+      <summary>Detect north east edges. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.EdgeDetectorCommandType.GradientEast">
+      <summary>Detect east edges. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.EdgeDetectorCommandType.GradientSouthEast">
+      <summary>Detect south east edges. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.EdgeDetectorCommandType.GradientSouth">
+      <summary>Detect south edges. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.EdgeDetectorCommandType.GradientSouthWest">
+      <summary>Detect south west edges. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.EdgeDetectorCommandType.GradientWest">
+      <summary>Detect west edges. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.EdgeDetectorCommandType.GradientNorthWest">
+      <summary>Detect north west edges. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.EmbossCommandDirection">
+      <summary>Enumerated values used to determine the direction of the apparent light source.</summary>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.EmbossCommandDirection.North">
+      <summary>North. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.EmbossCommandDirection.NorthEast">
+      <summary>Northeast. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.EmbossCommandDirection.East">
+      <summary>East. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.EmbossCommandDirection.SouthEast">
+      <summary>Southeast. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.EmbossCommandDirection.South">
+      <summary>South. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.EmbossCommandDirection.SouthWest">
+      <summary>Southwest. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.EmbossCommandDirection.West">
+      <summary>West. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.EmbossCommandDirection.NorthWest">
+      <summary>Northwest. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.FadedMaskCommandFlags">
+      <summary>Flags that indicate how the fade mask will be created.This enumeration has a FlagsAttribute attribute that allows a bitwise combination of its member values.</summary>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.FadedMaskCommandFlags.None">
+      <summary>do nothing </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.FadedMaskCommandFlags.FadeOutsideRegion">
+      <summary>If this flag is set, the fade will be outside the image's region. If this flag is not set, the fade will be inside the image's region. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.FadedMaskCommandFlags.FillWithDumpColor">
+      <summary>If this flag is set, the dump part of the mask will be filled with the dump color. The DumpColorStart and FadeWhiteToBlack flags determine the dump color. If this flag is not set, the dump part is filled with the Transparent color. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.FadedMaskCommandFlags.DumpColorStart">
+      <summary>If this flag is set, the dump color is the color used at the start of the fade. The start color may be white or black, based on the FadeWhiteToBlack. If this flag is not set, the dump color is the color at the end of the fade. If the FillWithDumpColor flag is not set, this flag is ignored. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.FadedMaskCommandFlags.FadeWhiteToBlack">
+      <summary>If this flag is set, the fade starts with white and changes toward black. If this flag is not set, the fade changes from black to white. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.FadedMaskCommandFlags.NoTransparencyFill">
+      <summary>If this flag is set, fill the transparency part with a color other than Transparent. The color is either the same as the dump color, or its opposite, depending on whether the TransparencyAsDump flag is set. If the NoTransparencyFill flag is not set, fill the transparency with Transparent. If the FillWithDumpColor flag is not set, this flag is ignored. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.FadedMaskCommandFlags.TransparencyAsDump">
+      <summary>If this flag is set, the transparency color is the same as the dump color. If this flag is not set, the transparency color is the opposite of the dump color. This flag is used only if NoTransparencyFill is set. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.FunctionalLookupTableFlags">
+      <summary>Enumeration that indicates the function used to update the lookup table.</summary>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.FunctionalLookupTableFlags.Exponential">
+      <summary>Apply the exponential function. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.FunctionalLookupTableFlags.Logarithm">
+      <summary>Apply the natural logarithm function. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.FunctionalLookupTableFlags.Linear">
+      <summary>Apply the linear function. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.FunctionalLookupTableFlags.Sigmoid">
+      <summary>Apply the sigmoid function. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.FunctionalLookupTableFlags.Signed">
+      <summary>Signed, the lookupTable parameter of GetFunctionalLookupTable should contain signed data. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.MaskConvolutionCommandType">
+      <summary>Enumeration that indicates which mask to use in the convolution process.</summary>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.MaskConvolutionCommandType.Emboss">
+      <summary>Apply the Emboss Mask on the image. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.MaskConvolutionCommandType.EdgeDetection">
+      <summary>Apply the Edge Detection Mask on the image. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.MaskConvolutionCommandType.EmbossSplotch">
+      <summary>Apply the Emboss-Splotch Mask on the image. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.MaskConvolutionCommandType.Splotch">
+      <summary>Apply the Splotch Mask on the image. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.OffsetCommandType">
+      <summary>Flags that indicate how to handle any exposed areas resulting from the bitmap shift.</summary>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.OffsetCommandType.Color">
+      <summary>Fill any exposed areas with BackColor. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.OffsetCommandType.Repeat">
+      <summary>Stretch the image edges to fill the exposed area. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.OffsetCommandType.NoChange">
+      <summary>Leave the exposed area as is, without changing it. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.OffsetCommandType.WrapAround">
+      <summary>Fill any exposed areas with the opposite side of the image. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.RegionContourPointsCommandFlags">
+      <summary>Enumerated values that indicate the required contour points.</summary>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.RegionContourPointsCommandFlags.All">
+      <summary>Gets all region contour points ignoring their order. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.RegionContourPointsCommandFlags.Outside">
+      <summary>Gets the outside region contour points only in an ordered way that allows you to reconstruct the outside region shape from these points. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.ResizeRegionCommandType">
+      <summary>Enumeration that indicates whether to contract or expand the image region.</summary>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.ResizeRegionCommandType.ExpandRegion">
+      <summary>Expand the region. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.ResizeRegionCommandType.ContractRegion">
+      <summary>Contract the region. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined">
+      <summary>Enumerated values that represent a predefined spatial filter to use.</summary>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.EmbossNorth">
+      <summary>Creates an image with an embossed appearance to the north. (This is used for artistic effect, but is listed here because it is one of the predefined filters.) </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.EmbossNorthEast">
+      <summary>Creates an image with an embossed appearance to the north-east. (This is used for artistic effect, but is listed here because it is one of the predefined filters.) </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.EmbossEast">
+      <summary>Creates an image with an embossed appearance to the east. (This is used for artistic effect, but is listed here because it is one of the predefined filters.) </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.EmbossSouthEast">
+      <summary>Creates an image with an embossed appearance to the south-east. (This is used for artistic effect, but is listed here because it is one of the predefined filters.) </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.EmbossSouth">
+      <summary>Creates an image with an embossed appearance to the south. (This is used for artistic effect, but is listed here because it is one of the predefined filters.) </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.EmbossSouthWest">
+      <summary>Creates an image with an embossed appearance to the south-west. (This is used for artistic effect, but is listed here because it is one of the predefined filters.) </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.EmbossWest">
+      <summary>Creates an image with an embossed appearance to the west. (This is used for artistic effect, but is listed here because it is one of the predefined filters.) </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.EmbossNorthWest">
+      <summary>Creates an image with an embossed appearance to the north-west. (This is used for artistic effect, but is listed here because it is one of the predefined filters.) </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.GradientEdgeEnhancementNorth">
+      <summary>Detects edges using a Gradient directional filter. The direction of the effect is north. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.GradientEdgeEnhancementNorthEast">
+      <summary>Detects edges using a Gradient directional filter. The direction of the effect is north-east. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.GradientEdgeEnhancementEast">
+      <summary>Detects edges using a Gradient directional filter. The direction of the effect is east. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.GradientEdgeEnhancementSouthEast">
+      <summary>Detects edges using a Gradient directional filter. The direction of the effect is south-east. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.GradientEdgeEnhancementSouth">
+      <summary>Detects edges using a Gradient directional filter. The direction of the effect is south. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.GradientEdgeEnhancementSouthWest">
+      <summary>Detects edges using a Gradient directional filter. The direction of the effect is south-west. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.GradientEdgeEnhancementWest">
+      <summary>Detects edges using a Gradient directional filter. The direction of the effect is west. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.GradientEdgeEnhancementNorthWest">
+      <summary>Detects edges using a Gradient directional filter. The direction of the effect is north-west. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.LaplacianFilter1">
+      <summary>Applies Laplacian line detection number 1. All pixels not on the detected lines are changed to black. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.LaplacianFilter2">
+      <summary>Applies Laplacian line detection number 2. All pixels not on the detected lines are changed to black. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.LaplacianFilter3">
+      <summary>Applies Laplacian line detection number 3. All pixels not on the detected lines are changed to black. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.LaplacianDiagonal">
+      <summary>Applies diagonal Laplacian line detection. All pixels not on the detected lines are changed to black. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.LaplacianHorizontal">
+      <summary>Applies horizontal Laplacian line detection. All pixels not on the detected lines are changed to black. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.LaplacianVertical">
+      <summary>Applies vertical Laplacian line detection. All pixels not on the detected lines are changed to black. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.SobelHorizontal">
+      <summary>Applies horizontal Sobel edge detection. All pixels not on the detected edges are changed to black. (The usage is the same as Prewitt, but the algorithm is different.) </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.SobelVertical">
+      <summary>Applies vertical Sobel edge detection. All pixels not on the detected edges are changed to black. (The usage is the same as Prewitt, but the algorithm is different.) </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.PrewittHorizontal">
+      <summary>Applies horizontal Prewitt edge detection. All pixels not on the detected edges are changed to black. (The usage is the same as Sobel, but the algorithm is different.) Choose the appropriate value for horizontal or vertical detection. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.PrewittVertical">
+      <summary>Applies vertical Prewitt edge detection. All pixels not on the detected edges are changed to black. (The usage is the same as Sobel, but the algorithm is different.) Choose the appropriate value for horizontal or vertical detection. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.ShiftAndDifferenceDiagonal">
+      <summary>Applies diagonal shift-and-difference edge detection. All pixels not on the detected edges are changed to black. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.ShiftAndDifferenceHorizontal">
+      <summary>Applies horizontal shift-and-difference edge detection. All pixels not on the detected edges are changed to black. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.ShiftAndDifferenceVertical">
+      <summary>Applies vertical shift-and-difference edge detection. All pixels not on the detected edges are changed to black. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.LineSegmentHorizontal">
+      <summary>Applies horizontal line segment line detection. You can use this filter to find line discontinuities in an image. All pixels not on the detected line segments are changed to black. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.LineSegmentVertical">
+      <summary>Applies vertical line segment line detection. You can use this filter to find line discontinuities in an image. All pixels not on the detected line segments are changed to black. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.LineSegmentLeftToRight">
+      <summary>Applies left to right line segment line detection. You can use this filter to find line discontinuities in an image. All pixels not on the detected line segments are changed to black. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.SpatialFilterCommandPredefined.LineSegmentRightToLeft">
+      <summary>Applies right to left line segment line detection. You can use this filter to find line discontinuities in an image. All pixels not on the detected line segments are changed to black. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.UnsharpMaskCommandColorType">
+      <summary>Enumeration that indicates the color space in which to apply the mask.</summary>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.UnsharpMaskCommandColorType.None">
+      <summary>Reserved. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.UnsharpMaskCommandColorType.Rgb">
+      <summary>Apply the mask in the RGB color space. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.UnsharpMaskCommandColorType.Yuv">
+      <summary>Apply the mask in the YUV color space. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Effects.UserFilterCommandType">
+      <summary>Enumeration that indicates the type of operation.</summary>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.UserFilterCommandType.Sum">
+      <summary>Perform sum operation. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.UserFilterCommandType.Maximum">
+      <summary>Perform maximum operation. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Effects.UserFilterCommandType.Minimum">
+      <summary>Perform minimum operation. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+  </members>
+</doc>

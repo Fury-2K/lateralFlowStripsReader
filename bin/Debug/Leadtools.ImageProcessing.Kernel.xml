@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Leadtools.ImageProcessing.Kernel</name>
+  </assembly>
+  <members>
+    <member name="T:Leadtools.ImageProcessing.Kernel.CopyImageCommand">
+      <summary>Creates a copy of a RasterImage object.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Kernel.CopyImageCommand.#ctor">
+      <summary>Initializes a new instance of the CopyImageCommand class with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Kernel.CopyImageCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>The string that is the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Kernel.CopyImageCommand.DestinationImage">
+      <summary>Holds the resulting image of the Run method.</summary>
+      <value>The resulting RasterImage.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Kernel.CropCommand">
+      <summary>Crops the image, resulting in an image having the size of the specified rectangle.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Kernel.CropCommand.#ctor">
+      <summary>Initializes a new CropCommand class object.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Kernel.CropCommand.#ctor(Leadtools.LeadRect)">
+      <summary>Initializes a new instance of the CropCommand class with explicit parameters.</summary>
+      <param name="rect">A LeadRect to which the image will be cropped.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Kernel.CropCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>A string containing the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Kernel.CropCommand.CropRect">
+      <summary>Gets or sets the rectangular area to which the image will be cropped.</summary>
+      <value>A LeadRect structure representing the rectangular area to which the image will be cropped.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Kernel.DetectDocumentCommand">
+      <summary>Detects and returns the points of document's edges in an image.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Kernel.DetectDocumentCommand.#ctor">
+      <summary>Initializes a new DetectDocumentCommand class object.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Kernel.DetectDocumentCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String containing the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Kernel.DetectDocumentCommand.DocumentArea">
+      <summary>An array of LeadPoint structures that contains the points that represent the edges of the document that have been detected.</summary>
+      <value>An array of points that represents the edges of the document that have been detected.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Kernel.DetectGlareCommand">
+      <summary>Detects the glare zone in an image.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Kernel.DetectGlareCommand.#ctor">
+      <summary>Initializes a new DetectGlareCommand class object.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Kernel.DetectGlareCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>A string containing the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Kernel.DetectGlareCommand.GlareArea">
+      <summary>A LeadRect structure that represents the area containing the detected glare.</summary>
+      <value>The detected glare area, or an empty rectangle value if no glare is detected.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Kernel.InvertCommand">
+      <summary>Inverts the colors in the specified image, giving it the appearance of a photographic negative.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Kernel.InvertCommand.#ctor">
+      <summary>Initializes a new InvertCommand class object.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Kernel.InvertCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>A string that contains the name of this command.</returns>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Kernel.KernelFactory">
+      <summary>Provides the support to create a RasterImage object from a KernelImage.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Kernel.KernelFactory.CreateImage(Leadtools.ImageProcessing.Kernel.KernelImage,System.Boolean)">
+      <summary>Creates a RasterImage instance from a KernelImage.</summary>
+      <param name="image">The data holder for the image kernel.</param>
+      <param name="copyData">A flag to indicate whether to copy the KernelImage or use the same buffer to create the RasterImage.</param>
+      <returns>A RasterImage object.</returns>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Kernel.KernelImage">
+      <summary>Defines a KernelImage data holder</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Kernel.KernelImage.Create(System.Byte[],System.Int32,System.Int32,Leadtools.ImageProcessing.Kernel.ImageFormat)">
+      <summary>Creates a new instance of the KernelImage class.</summary>
+      <param name="data">An array containing the image data buffer.</param>
+      <param name="width">The width of the image in pixels.</param>
+      <param name="height">The height of the image in pixels.</param>
+      <param name="format">The image format as defined in ImageFormat.</param>
+      <returns>A KernelImage object.</returns>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Kernel.KernelImage.Create(System.IntPtr,System.Int32,System.Int32,Leadtools.ImageProcessing.Kernel.ImageFormat)">
+      <summary>Creates a new instance of the KernelImage class.</summary>
+      <param name="data">The image data buffer.</param>
+      <param name="width">The width of the image in pixels.</param>
+      <param name="height">The height of the image in pixels.</param>
+      <param name="format">The image format as defined in ImageFormat.</param>
+      <returns>A KernelImage object.</returns>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Kernel.ManualPerspectiveCorrectionCommand">
+      <summary>Corrects the view perspective of the RasterImage.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Kernel.ManualPerspectiveCorrectionCommand.#ctor">
+      <summary>Initializes a new instance of the ManualPerspectiveCorrectionCommand class with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Kernel.ManualPerspectiveCorrectionCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that is the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Kernel.ManualPerspectiveCorrectionCommand.DestinationImage">
+      <summary>Gets the resulting image of this command</summary>
+      <value>The resulting RasterImage.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Kernel.ManualPerspectiveCorrectionCommand.InputPoints">
+      <summary>Gets an array of LeadPoint structures used to set the location of the input points in the distorted image.</summary>
+      <value>The array of points that will be transferred to match the location of the mapped points list.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Kernel.ManualPerspectiveCorrectionCommand.MappingPoints">
+      <summary>An array of LeadPoint structures that contain the mapped points in the input image.</summary>
+      <value>Array of points that maps each point in the InputPoints list to its output location.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Kernel.RasterCommandCompletedEventArgs">
+      <summary>Handles each command completed by RasterCommandsList.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Kernel.RasterCommandCompletedEventArgs.#ctor(Leadtools.RasterCommand)">
+      <summary>Initializes a new RasterCommandCompletedEventArgs class object with explicit parameters.</summary>
+      <param name="command">RasterCommand object that references the completed command object</param>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Kernel.RasterCommandCompletedEventArgs.Command">
+      <summary>The executed RasterCommand object.</summary>
+      <value>The executed RasterCommand object.</value>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Kernel.RasterCommandCompletedEventArgs.Stop">
+      <summary>A flag that indicates whether to stop processing the RasterCommandsList.</summary>
+      <value>A flag that indicates whether to stop processing the RasterCommandsList.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Kernel.RasterCommandsList">
+      <summary>Represents a collection of RasterCommands objects.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Kernel.RasterCommandsList.#ctor">
+      <summary>Creates a new instance of the RasterCommandsList with default settings.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Kernel.RasterCommandsList.Run(Leadtools.RasterImage)">
+      <summary>Runs the image processing commands in the RasterCommandsList sequentially on the image.</summary>
+      <param name="image">The image on which the image processing commands are to be performed.</param>
+    </member>
+    <member name="E:Leadtools.ImageProcessing.Kernel.RasterCommandsList.CommandCompleted">
+      <summary>Occurs after each command is executed in the RasterCommandsList</summary>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Kernel.RasterCommandsList.ResultImage">
+      <summary>Gets the resulting image after executing the RasterCommandsList</summary>
+      <value>The resulting RasterImage.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Kernel.RotateFlipCommand">
+      <summary>Rotates and flips the image.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Kernel.RotateFlipCommand.#ctor">
+      <summary>Initializes a new RotateFlipCommand class object.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Kernel.RotateFlipCommand.#ctor(Leadtools.ImageProcessing.Kernel.RotateFlipType)">
+      <summary>Initializes a new RotateFlipCommand class object.</summary>
+      <param name="type">RotateFlipType to use.</param>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Kernel.RotateFlipCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String that is the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Kernel.RotateFlipCommand.Type">
+      <summary>Gets and sets the RotateFlipType.</summary>
+      <value>All Rotation values are clockwise.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Kernel.SignalToNoiseRatioCommand">
+      <summary>Finds the signal to noise ratio (SNR) of an image.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Kernel.SignalToNoiseRatioCommand.#ctor">
+      <summary>Initializes a new SignalToNoiseRatioCommand class object.</summary>
+    </member>
+    <member name="M:Leadtools.ImageProcessing.Kernel.SignalToNoiseRatioCommand.ToString">
+      <summary>Overridden. Returns a meaningful name for this command.</summary>
+      <returns>String containing the name of this command.</returns>
+    </member>
+    <member name="P:Leadtools.ImageProcessing.Kernel.SignalToNoiseRatioCommand.Ratio">
+      <summary>Gets the Signal To Noise Ratio value.</summary>
+      <value>A double value that represents the Signal To Noise Ratio (SNR) as the 10\*log10 of the real value. This value gives an indication of the homogeneity of adjacent pixels in an image.</value>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Kernel.ImageFormat">
+      <summary>Image data format</summary>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Kernel.ImageFormat.RGB888">
+      <summary>24-bits per pixel image data stored in RGB order </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Kernel.ImageFormat.BGR888">
+      <summary>24-bits per pixel image data stored in BGR order </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Kernel.ImageFormat.RGB8888">
+      <summary>32-bits per pixel image data stored in RGBA order </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Kernel.ImageFormat.BGR8888">
+      <summary>32-bits per pixel image data stored in BGRA order </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Kernel.ImageFormat.YV12">
+      <summary>Planar Y, U, V data using 4:1:1 (aka 4:2:0) subsampling. The U and V planes are half the width and height of the Y plane. The Y plane is followed immediately by the U (Cb) plane, which is followed immediately by the V (Cr) plane. The YUV data is 12 bits/pixel (each 2x2 pixels are described by 6 bytes). The image's width and height must be multiple of 2. The size of the YUV data is width * height * 3 / 2 </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Kernel.ImageFormat.NV12">
+      <summary>A Y plane followed by interleaved plane of UV data. There are half as many U and V samples as Y samples in both width and height. In other words, for each 2x2 square of Y pixels, there is only one corresponding U, V pair. The YUV data is 12 bits/pixel (each 2x2 pixels are described by 6 bytes). The image's width and height must be multiple of 2. The size of the YUV data is width * height * 3 / 2. </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Kernel.ImageFormat.NV21">
+      <summary>A Y plane followed by interleaved plane of VU data. Similar to NV12 data, except that the order of UV samples is reversed. The YUV data is 12 bits/pixel (each 2x2 pixels are described by 6 bytes). The image's width and height must be multiple of 2 The size of the YUV data is width * height * 3 / 2 </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Kernel.ImageFormat.YUY2">
+      <summary>Interleaved 4:2:2 YUYV data. Each two horizontal pixels have the same U and V values. The YUV data is 16 bits/pixel (each 2 pixels are described by 4 bytes). The image's width must be a multiple of 2. The size of the YUV data is width * height * 2 </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="T:Leadtools.ImageProcessing.Kernel.RotateFlipType">
+      <summary>Image rotation and flip type</summary>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Kernel.RotateFlipType.RotateNoneFlipNone">
+      <summary>No rotation and no flipping </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Kernel.RotateFlipType.RotateNoneFlipX">
+      <summary>Specifies a horizontal flip only </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Kernel.RotateFlipType.RotateNoneFlipY">
+      <summary>Specifies a vertical flip only </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Kernel.RotateFlipType.RotateNoneFlipXY">
+      <summary>Specifies a horizontal and vertical flip </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Kernel.RotateFlipType.Rotate90FlipNone">
+      <summary>90 degree rotation only </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Kernel.RotateFlipType.Rotate90FlipX">
+      <summary>90 degree rotation followed by a horizontal flip </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Kernel.RotateFlipType.Rotate90FlipY">
+      <summary>90 degree rotation followed by vertical flip </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Kernel.RotateFlipType.Rotate90FlipXY">
+      <summary>90 degree rotation followed by a horizontal and vertical flip </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Kernel.RotateFlipType.Rotate180FlipNone">
+      <summary>180 degree rotation only </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Kernel.RotateFlipType.Rotate180FlipX">
+      <summary>180 degree rotation followed by a horizontal flip </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Kernel.RotateFlipType.Rotate180FlipY">
+      <summary>180 degree rotation followed by a vertical flip </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Kernel.RotateFlipType.Rotate180FlipXY">
+      <summary>180 degree rotation followed by a horizontal and vertical flip </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Kernel.RotateFlipType.Rotate270FlipNone">
+      <summary>270 degree rotation only </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Kernel.RotateFlipType.Rotate270FlipX">
+      <summary>270 degree rotation followed by a horizontal flip </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Kernel.RotateFlipType.Rotate270FlipY">
+      <summary>270 degree rotation followed by a vertical flip </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.ImageProcessing.Kernel.RotateFlipType.Rotate270FlipXY">
+      <summary>270 degree rotation followed by a horizontal and vertical flip </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+  </members>
+</doc>

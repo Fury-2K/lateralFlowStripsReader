@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7A81E9DC-3C65-412E-8F28-4C04DF4A01EC}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XamarinCropImage</RootNamespace>
+    <AssemblyName>XamarinCropImage</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidApplication>true</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <BundleAssemblies>false</BundleAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <AndroidManagedSymbols>true</AndroidManagedSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Leadtools, Version=20.0.0.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <HintPath>packages\Leadtools.dll.NETStandard.20.0.0.2\lib\netstandard1.4\Leadtools.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs, Version=20.0.0.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <HintPath>packages\Leadtools.Codecs.dll.NETStandard.20.0.0.2\lib\netstandard1.4\Leadtools.Codecs.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Core, Version=20.0.0.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <HintPath>packages\Leadtools.Core.dll.NETStandard.20.0.0.2\lib\netstandard1.4\Leadtools.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Drawing, Version=20.0.0.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <HintPath>packages\Leadtools.Drawing.dll.NETStandard.20.0.0.2\lib\netstandard1.4\Leadtools.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.ImageProcessing.Color, Version=20.0.0.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <HintPath>packages\Leadtools.ImageProcessing.Color.dll.NETStandard.20.0.0.2\lib\netstandard1.4\Leadtools.ImageProcessing.Color.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.ImageProcessing.Core, Version=20.0.0.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <HintPath>packages\Leadtools.ImageProcessing.Core.dll.NETStandard.20.0.0.2\lib\netstandard1.4\Leadtools.ImageProcessing.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.ImageProcessing.Effects, Version=20.0.0.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <HintPath>packages\Leadtools.ImageProcessing.Effects.dll.NETStandard.20.0.0.2\lib\netstandard1.4\Leadtools.ImageProcessing.Effects.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.ImageProcessing.Kernel, Version=20.0.0.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <HintPath>packages\Leadtools.ImageProcessing.Kernel.dll.NETStandard.20.0.0.2\lib\netstandard1.4\Leadtools.ImageProcessing.Kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Svg, Version=20.0.0.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <HintPath>packages\Leadtools.Svg.dll.NETStandard.20.0.0.2\lib\netstandard1.4\Leadtools.Svg.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Android" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing">
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\Framework\v4.0.30319\System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Xamarin.Android.Support.Animated.Vector.Drawable, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Xamarin.Android.Support.Animated.Vector.Drawable.24.2.1\lib\MonoAndroid70\Xamarin.Android.Support.Animated.Vector.Drawable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Compat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Xamarin.Android.Support.Compat.24.2.1\lib\MonoAndroid70\Xamarin.Android.Support.Compat.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Core.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Xamarin.Android.Support.Core.UI.24.2.1\lib\MonoAndroid70\Xamarin.Android.Support.Core.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Core.Utils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Xamarin.Android.Support.Core.Utils.24.2.1\lib\MonoAndroid70\Xamarin.Android.Support.Core.Utils.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Fragment, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Xamarin.Android.Support.Fragment.24.2.1\lib\MonoAndroid70\Xamarin.Android.Support.Fragment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Media.Compat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Xamarin.Android.Support.Media.Compat.24.2.1\lib\MonoAndroid70\Xamarin.Android.Support.Media.Compat.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.AppCompat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Xamarin.Android.Support.v7.AppCompat.24.2.1\lib\MonoAndroid70\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Vector.Drawable, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Xamarin.Android.Support.Vector.Drawable.24.2.1\lib\MonoAndroid70\Xamarin.Android.Support.Vector.Drawable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainActivity.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GettingStarted.Xamarin" />
+    <None Include="imaging.library.1.1.1.nupkg" />
+    <None Include="packages.config" />
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Main.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="xamandroidsupportv7appcompat">
+      <Visible>False</Visible>
+      <Version>24.2.1.0</Version>
+    </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Colors.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Styles.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_gallery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\menu\menu_main.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <Import Project="packages\Xamarin.Android.Support.Vector.Drawable.24.2.1\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('packages\Xamarin.Android.Support.Vector.Drawable.24.2.1\build\Xamarin.Android.Support.Vector.Drawable.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Xamarin.Android.Support.Vector.Drawable.24.2.1\build\Xamarin.Android.Support.Vector.Drawable.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Xamarin.Android.Support.Vector.Drawable.24.2.1\build\Xamarin.Android.Support.Vector.Drawable.targets'))" />
+    <Error Condition="!Exists('packages\Leadtools.Codecs.Bmp.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Bmp.dll.Xamarin.Android.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Leadtools.Codecs.Bmp.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Bmp.dll.Xamarin.Android.targets'))" />
+    <Error Condition="!Exists('packages\Leadtools.Codecs.Cmp.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Cmp.dll.Xamarin.Android.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Leadtools.Codecs.Cmp.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Cmp.dll.Xamarin.Android.targets'))" />
+    <Error Condition="!Exists('packages\Leadtools.Codecs.Cmw.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Cmw.dll.Xamarin.Android.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Leadtools.Codecs.Cmw.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Cmw.dll.Xamarin.Android.targets'))" />
+    <Error Condition="!Exists('packages\Leadtools.Codecs.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.dll.Xamarin.Android.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Leadtools.Codecs.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.dll.Xamarin.Android.targets'))" />
+    <Error Condition="!Exists('packages\Leadtools.Codecs.Fax.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Fax.dll.Xamarin.Android.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Leadtools.Codecs.Fax.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Fax.dll.Xamarin.Android.targets'))" />
+    <Error Condition="!Exists('packages\Leadtools.Codecs.Gif.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Gif.dll.Xamarin.Android.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Leadtools.Codecs.Gif.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Gif.dll.Xamarin.Android.targets'))" />
+    <Error Condition="!Exists('packages\Leadtools.Codecs.J2k.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.J2k.dll.Xamarin.Android.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Leadtools.Codecs.J2k.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.J2k.dll.Xamarin.Android.targets'))" />
+    <Error Condition="!Exists('packages\Leadtools.Codecs.Jb2.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Jb2.dll.Xamarin.Android.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Leadtools.Codecs.Jb2.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Jb2.dll.Xamarin.Android.targets'))" />
+    <Error Condition="!Exists('packages\Leadtools.Codecs.Jbg.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Jbg.dll.Xamarin.Android.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Leadtools.Codecs.Jbg.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Jbg.dll.Xamarin.Android.targets'))" />
+    <Error Condition="!Exists('packages\Leadtools.Codecs.Png.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Png.dll.Xamarin.Android.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Leadtools.Codecs.Png.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Png.dll.Xamarin.Android.targets'))" />
+    <Error Condition="!Exists('packages\Leadtools.Codecs.Raw.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Raw.dll.Xamarin.Android.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Leadtools.Codecs.Raw.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Raw.dll.Xamarin.Android.targets'))" />
+    <Error Condition="!Exists('packages\Leadtools.Codecs.Tif.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Tif.dll.Xamarin.Android.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Leadtools.Codecs.Tif.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Tif.dll.Xamarin.Android.targets'))" />
+    <Error Condition="!Exists('packages\Leadtools.ColorConversion.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.ColorConversion.dll.Xamarin.Android.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Leadtools.ColorConversion.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.ColorConversion.dll.Xamarin.Android.targets'))" />
+    <Error Condition="!Exists('packages\Leadtools.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.dll.Xamarin.Android.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Leadtools.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.dll.Xamarin.Android.targets'))" />
+    <Error Condition="!Exists('packages\Leadtools.Drawing.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Drawing.dll.Xamarin.Android.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Leadtools.Drawing.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Drawing.dll.Xamarin.Android.targets'))" />
+    <Error Condition="!Exists('packages\Leadtools.ImageProcessing.Color.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.ImageProcessing.Color.dll.Xamarin.Android.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Leadtools.ImageProcessing.Color.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.ImageProcessing.Color.dll.Xamarin.Android.targets'))" />
+    <Error Condition="!Exists('packages\Leadtools.ImageProcessing.Core.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.ImageProcessing.Core.dll.Xamarin.Android.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Leadtools.ImageProcessing.Core.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.ImageProcessing.Core.dll.Xamarin.Android.targets'))" />
+    <Error Condition="!Exists('packages\Leadtools.ImageProcessing.Effects.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.ImageProcessing.Effects.dll.Xamarin.Android.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Leadtools.ImageProcessing.Effects.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.ImageProcessing.Effects.dll.Xamarin.Android.targets'))" />
+    <Error Condition="!Exists('packages\Leadtools.ImageProcessing.Kernel.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.ImageProcessing.Kernel.dll.Xamarin.Android.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Leadtools.ImageProcessing.Kernel.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.ImageProcessing.Kernel.dll.Xamarin.Android.targets'))" />
+    <Error Condition="!Exists('packages\Leadtools.ImageProcessing.Utilities.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.ImageProcessing.Utilities.dll.Xamarin.Android.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Leadtools.ImageProcessing.Utilities.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.ImageProcessing.Utilities.dll.Xamarin.Android.targets'))" />
+    <Error Condition="!Exists('packages\Leadtools.Svg.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Svg.dll.Xamarin.Android.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Leadtools.Svg.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Svg.dll.Xamarin.Android.targets'))" />
+  </Target>
+  <Import Project="packages\Leadtools.Codecs.Bmp.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Bmp.dll.Xamarin.Android.targets" Condition="Exists('packages\Leadtools.Codecs.Bmp.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Bmp.dll.Xamarin.Android.targets')" />
+  <Import Project="packages\Leadtools.Codecs.Cmp.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Cmp.dll.Xamarin.Android.targets" Condition="Exists('packages\Leadtools.Codecs.Cmp.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Cmp.dll.Xamarin.Android.targets')" />
+  <Import Project="packages\Leadtools.Codecs.Cmw.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Cmw.dll.Xamarin.Android.targets" Condition="Exists('packages\Leadtools.Codecs.Cmw.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Cmw.dll.Xamarin.Android.targets')" />
+  <Import Project="packages\Leadtools.Codecs.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.dll.Xamarin.Android.targets" Condition="Exists('packages\Leadtools.Codecs.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.dll.Xamarin.Android.targets')" />
+  <Import Project="packages\Leadtools.Codecs.Fax.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Fax.dll.Xamarin.Android.targets" Condition="Exists('packages\Leadtools.Codecs.Fax.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Fax.dll.Xamarin.Android.targets')" />
+  <Import Project="packages\Leadtools.Codecs.Gif.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Gif.dll.Xamarin.Android.targets" Condition="Exists('packages\Leadtools.Codecs.Gif.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Gif.dll.Xamarin.Android.targets')" />
+  <Import Project="packages\Leadtools.Codecs.J2k.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.J2k.dll.Xamarin.Android.targets" Condition="Exists('packages\Leadtools.Codecs.J2k.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.J2k.dll.Xamarin.Android.targets')" />
+  <Import Project="packages\Leadtools.Codecs.Jb2.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Jb2.dll.Xamarin.Android.targets" Condition="Exists('packages\Leadtools.Codecs.Jb2.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Jb2.dll.Xamarin.Android.targets')" />
+  <Import Project="packages\Leadtools.Codecs.Jbg.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Jbg.dll.Xamarin.Android.targets" Condition="Exists('packages\Leadtools.Codecs.Jbg.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Jbg.dll.Xamarin.Android.targets')" />
+  <Import Project="packages\Leadtools.Codecs.Png.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Png.dll.Xamarin.Android.targets" Condition="Exists('packages\Leadtools.Codecs.Png.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Png.dll.Xamarin.Android.targets')" />
+  <Import Project="packages\Leadtools.Codecs.Raw.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Raw.dll.Xamarin.Android.targets" Condition="Exists('packages\Leadtools.Codecs.Raw.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Raw.dll.Xamarin.Android.targets')" />
+  <Import Project="packages\Leadtools.Codecs.Tif.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Tif.dll.Xamarin.Android.targets" Condition="Exists('packages\Leadtools.Codecs.Tif.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Codecs.Tif.dll.Xamarin.Android.targets')" />
+  <Import Project="packages\Leadtools.ColorConversion.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.ColorConversion.dll.Xamarin.Android.targets" Condition="Exists('packages\Leadtools.ColorConversion.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.ColorConversion.dll.Xamarin.Android.targets')" />
+  <Import Project="packages\Leadtools.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.dll.Xamarin.Android.targets" Condition="Exists('packages\Leadtools.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.dll.Xamarin.Android.targets')" />
+  <Import Project="packages\Leadtools.Drawing.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Drawing.dll.Xamarin.Android.targets" Condition="Exists('packages\Leadtools.Drawing.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Drawing.dll.Xamarin.Android.targets')" />
+  <Import Project="packages\Leadtools.ImageProcessing.Color.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.ImageProcessing.Color.dll.Xamarin.Android.targets" Condition="Exists('packages\Leadtools.ImageProcessing.Color.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.ImageProcessing.Color.dll.Xamarin.Android.targets')" />
+  <Import Project="packages\Leadtools.ImageProcessing.Core.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.ImageProcessing.Core.dll.Xamarin.Android.targets" Condition="Exists('packages\Leadtools.ImageProcessing.Core.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.ImageProcessing.Core.dll.Xamarin.Android.targets')" />
+  <Import Project="packages\Leadtools.ImageProcessing.Effects.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.ImageProcessing.Effects.dll.Xamarin.Android.targets" Condition="Exists('packages\Leadtools.ImageProcessing.Effects.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.ImageProcessing.Effects.dll.Xamarin.Android.targets')" />
+  <Import Project="packages\Leadtools.ImageProcessing.Kernel.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.ImageProcessing.Kernel.dll.Xamarin.Android.targets" Condition="Exists('packages\Leadtools.ImageProcessing.Kernel.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.ImageProcessing.Kernel.dll.Xamarin.Android.targets')" />
+  <Import Project="packages\Leadtools.ImageProcessing.Utilities.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.ImageProcessing.Utilities.dll.Xamarin.Android.targets" Condition="Exists('packages\Leadtools.ImageProcessing.Utilities.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.ImageProcessing.Utilities.dll.Xamarin.Android.targets')" />
+  <Import Project="packages\Leadtools.Svg.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Svg.dll.Xamarin.Android.targets" Condition="Exists('packages\Leadtools.Svg.dll.Xamarin.Android.20.0.0.2\build\monoandroid\Leadtools.Svg.dll.Xamarin.Android.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+     Other similar extension points exist, see Microsoft.Common.targets.
+		<Target Name="BeforeBuild">
+		</Target>
+		<Target Name="AfterBuild">
+		</Target>
+ -->
+</Project>

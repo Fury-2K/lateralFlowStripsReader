@@ -1,0 +1,864 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Leadtools.Svg</name>
+  </assembly>
+  <members>
+    <member name="T:Leadtools.Svg.Assembly">
+      <summary>Utility class, see remarks.</summary>
+    </member>
+    <member name="M:Leadtools.Svg.Assembly.Use">
+      <summary>Force the dynamical loading of this assembly.</summary>
+    </member>
+    <member name="T:Leadtools.Svg.SvgDataUri">
+      <summary>Represents a data URI object.</summary>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDataUri.#ctor">
+      <summary>Creates a new instance of SvgDataUri.</summary>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDataUri.DecodeToFile(System.String)">
+      <summary>Saves the image data in this data URI object to a file on disk.</summary>
+      <param name="fileName">Output file name</param>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDataUri.DecodeToStream(System.IO.Stream)">
+      <summary>Saves the image data in this data URI object to a stream.</summary>
+      <param name="stream">Output stream</param>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDataUri.EncodeFromFile(System.String)">
+      <summary>Creates a standard data URI from an image in a disk file.</summary>
+      <param name="fileName">Name of a file on disk containing an image file. Supported image formats are PNG, GIF and JPEG. All other image formats will result in an error.</param>
+      <returns>A data URI string containing the media type, encoding and image data encoded as base 64.</returns>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDataUri.EncodeFromStream(System.IO.Stream)">
+      <summary>Creates a standard data URI from an image file in a stream.</summary>
+      <param name="stream">Stream containing an image file. Supported image formats are PNG, GIF and JPEG. All other image formats will result in an error.</param>
+      <returns>A data URI string containing the media type, encoding and image data encoded as base 64.</returns>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDataUri.Parse(System.String)">
+      <summary>Parses the values of a data URI from an href string.</summary>
+      <param name="href">The href value as a string.</param>
+      <returns>Object that contains the parsed values.</returns>
+    </member>
+    <member name="P:Leadtools.Svg.SvgDataUri.CharSetLength">
+      <summary>The length of the character set value in the href.</summary>
+      <value>The length of the character set value in Href if it contains a valid data URI; otherwise, **0** if Href does contain a valid data URI or if the optional value is missing.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgDataUri.CharSetOffset">
+      <summary>The offset into where the character set value starts in the href.</summary>
+      <value>The character offset into where the character set value starts in Href if it contains a valid data URI; otherwise, **-1** if Href does contain a valid data URI or if the optional value is missing.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgDataUri.Extension">
+      <summary>The common file extension of the image data in the href.</summary>
+      <value>The common file extension of the image data in Href if it contains a valid data URI; otherwise, **null** if Href does contain a valid data URI or if the optional value is missing.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgDataUri.Href">
+      <summary>The href data</summary>
+      <value>The href data as a raw string.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgDataUri.ImageFormat">
+      <summary>The LEADTOOLS image format that corresponds to the image data in the href.</summary>
+      <value>The LEADTOOLS image format that corresponds to the image data in Href if it contains a valid data URI; otherwise, RasterImageFormat.Unknown if Href does not contain a valid data URI or if the optional value is missing.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgDataUri.IsBase64">
+      <summary>Indicates whether the value is encoded as a base 64 string.</summary>
+      <value>**true** if the value is encoded as a base 64 string; otherwise, **false** if the data is not encoded as a base 64 string or if Href does not contain a valid data URI.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgDataUri.IsDataUri">
+      <summary>Indicates whether the href value contains a valid data URI object.</summary>
+      <value>**true** if Href contains a valid data URI object and the rest of the parameters are valid; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgDataUri.MediaLength">
+      <summary>The length of the media type value in the href.</summary>
+      <value>The length of the media type value in an Href if it contains a valid data URI; otherwise, **0** if Href does contain a valid data URI or if the optional value is missing.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgDataUri.MediaOffset">
+      <summary>The offset into where the media type value starts in the href.</summary>
+      <value>The character offset into where the media type value starts in Href if it contains a valid data URI; otherwise, **-1** if Href does contain a valid data URI or if the optional value is missing.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgDataUri.ValueLength">
+      <summary>The length of the image data value in the href.</summary>
+      <value>The length of the image data value in Href if it contains a valid data URI; otherwise, **0** if Href does contain a valid data URI or if the optional value is missing.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgDataUri.ValueOffset">
+      <summary>The offset into where the image data value starts in the href.</summary>
+      <value>The character offset into where the image data value starts in Href if it contains a valid data URI; otherwise, **-1** if Href does contain a valid data URI or if the optional value is missing.</value>
+    </member>
+    <member name="T:Leadtools.Svg.SvgDocument">
+      <summary>Represents a Scalable Vector Graphics (SVG) document.</summary>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.#ctor(SerializationInfo,StreamingContext)">
+      <summary>This constructor is required by System.Runtime.Serialization.ISerializable</summary>
+      <param name="info">The data needed to serialize or deserialize an object.</param>
+      <param name="context">The source and destination of a given serialized stream.</param>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.AddElementIDs">
+      <summary>Adds unique IDs to the elements of this SvgDocument.</summary>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.BeginRenderOptimize">
+      <summary>Optimizes the document for rendering.</summary>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.BeginUpdate">
+      <summary>Begins a process to update the elements (nodes) of an SVG document.</summary>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.CalculateBounds(System.Boolean)">
+      <summary>Calculates the physical (pixel) bounds and resolution of this SvgDocument.</summary>
+      <param name="trimmed"></param>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.Clone">
+      <summary>Creates an exact copy of this SvgDocument.</summary>
+      <returns>The SvgDocument object this method creates.</returns>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.EndRenderOptimize">
+      <summary>Clears the rendering optimization data.</summary>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.EndUpdate">
+      <summary>Ends a process that updates the elements (nodes) of an SVG document.</summary>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.EnumerateElements(Leadtools.Svg.SvgEnumerateOptions,Leadtools.Svg.SvgEnumerateElementsCallback,System.Object)">
+      <summary>Enumerates the elements (nodes) of this SvgDocument with the specified options.</summary>
+      <param name="options">Options to use. Can be **null**.</param>
+      <param name="callback">Callback to receive the elements (nodes). Cannot be **null**.</param>
+      <param name="userData">Optional user data that will be passed to the callback.</param>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.Flat(Leadtools.Svg.SvgFlatOptions)">
+      <summary>Flattens this SvgDocument.</summary>
+      <param name="options">The flat options to use. This can be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.GetObjectData(SerializationInfo,StreamingContext)">
+      <summary>Populates a specified System.Runtime.Serialization.SerializationInfo with the data needed to serialize this object.</summary>
+      <param name="info">The System.Runtime.Serialization.SerializationInfo to populate with data.</param>
+      <param name="context">The contextual information about the source or destination of the serialization.</param>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.HasElement(Leadtools.Svg.SvgElementType)">
+      <summary>Gets a value that indicates whether this SVG document contains any elements of the specified type.</summary>
+      <param name="elementType">Element type to search.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.load">
+      <summary>Creates an SvgDocument object from a LEAD stream containing SVG data.</summary>
+      <param name="stream">The stream containing SVG data.</param>
+      <param name="options">Options to use during load. If this parameter is **null**, then the default SvgLoadOptions will be used.</param>
+      <returns>The SvgDocument object this method creates.</returns>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.LoadFromFile(System.String,Leadtools.Svg.SvgLoadOptions)">
+      <summary>Creates an SvgDocument object from an SVG file on disk.</summary>
+      <param name="fileName">Path to the SVG file on disk</param>
+      <param name="options">Options to use during load. If this parameter is **null**, then a default SvgLoadOptions object will be used.</param>
+      <returns>The SvgDocument object this method creates.</returns>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.LoadFromMemory(System.Byte[],System.Int32,System.Int32,Leadtools.Svg.SvgLoadOptions)">
+      <summary>Creates an SvgDocument object from data saved in a memory buffer.</summary>
+      <param name="buffer">Buffer containing the SVG data.</param>
+      <param name="offset">0-based offset into the \buffer\ where the data begins.</param>
+      <param name="length">Number of bytes to read.</param>
+      <param name="options">Options to use during load. If this parameter is **null**, then a default SvgLoadOptions object will be used.</param>
+      <returns>The SvgDocument object this method creates.</returns>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.LoadFromStream(System.IO.Stream,Leadtools.Svg.SvgLoadOptions)">
+      <summary>Creates an SvgDocument object from a stream containing SVG data.</summary>
+      <param name="stream">The stream containing SVG data</param>
+      <param name="options">Options to use during load. If this parameter is **null**, then a default SvgLoadOptions object will be used.</param>
+      <returns>The SvgDocument object this method creates.</returns>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.MergeWith(Leadtools.Svg.SvgDocument,Leadtools.Svg.SvgMergeOptions)">
+      <summary>Merges the content of this SVG document with the element of a source document. Stores the result in this SVG document.</summary>
+      <param name="document">The source document. The elements of this document will be merged with the current SVG document. This value cannot be **null**.</param>
+      <param name="options">Options used during conversion, specifying which elements to drop from the source or destination document during the merge operation. If this value is **null**, then all the elements from the source and destination documents are merged.</param>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.OptimizeView">
+      <summary>For internal use.</summary>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.Rasterize(Leadtools.RasterImage,Leadtools.Svg.SvgRenderOptions)">
+      <summary>Renders this SvgDocument to the surface of a LEADTOOLS Leadtools.RasterImage object.</summary>
+      <param name="image">The target image. This must be a valid Leadtools.RasterImage object that is allocated and ready to use. Cannot be **null**.</param>
+      <param name="options">Options to use during rendering. Can be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.Render(Leadtools.IRenderingEngine,Leadtools.Svg.SvgRenderOptions)">
+      <summary>Renders this SvgDocument to an output engine.</summary>
+      <param name="engine">Rendering engine to use for the target device. Cannot be **null**.</param>
+      <param name="options">Options to use during rendering. Can be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.Resize(System.Double)">
+      <summary>Resizes this SVG document by the specified factor.</summary>
+      <param name="scaleFactor">Factor to use. This value must not be 0.</param>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.save">
+      <summary>Saves this SvgDocument to a LEAD stream.</summary>
+      <param name="stream">Output stream.</param>
+      <param name="options">Save option. Can be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.SaveToFile(System.String,Leadtools.Svg.SvgSaveOptions)">
+      <summary>Saves this SvgDocument to a disk file.</summary>
+      <param name="fileName">Output file name.</param>
+      <param name="options">Save option. Can be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.SaveToStream(System.IO.Stream,Leadtools.Svg.SvgSaveOptions)">
+      <summary>Saves this SvgDocument to a stream.</summary>
+      <param name="stream">Output stream.</param>
+      <param name="options">Save option. Can be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.SetBounds(Leadtools.Svg.SvgBounds)">
+      <summary>Sets the physical (pixel) bounds of this SvgDocument manually</summary>
+      <param name="bounds">The bounds to use.</param>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.SetFilterElementsCallback(Leadtools.Svg.SvgFilterElementsCallback,System.Object)">
+      <summary>Sets the optional callback used to exclude svg elements from various operations.</summary>
+      <param name="callback">Callback to filter Svg elements (exclude svg elements).</param>
+      <param name="userData">Optional user data passed to the callback.</param>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.SetFlat(System.Boolean)">
+      <summary>Sets the flat flag of this document.</summary>
+      <param name="value"></param>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.SortElements(Leadtools.Svg.SvgSortOptions,Leadtools.Svg.SvgSortElementsCallback,System.Object)">
+      <summary>Enumerates the elements of this SvgDocument in a sorted manner.</summary>
+      <param name="options">Options to use. Can be **null**.</param>
+      <param name="callback">Callback to receive the sorted elements. Cannot be **null**.</param>
+      <param name="userData">Optional user data that will be passed to the callback.</param>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.ToFlat(Leadtools.Svg.SvgFlatOptions)">
+      <summary>Gets a flat version of this SvgDocument.</summary>
+      <param name="options">The flat options to use. This can be **null**.</param>
+      <returns>The flat version of this document.</returns>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.Dispose">
+      <summary>Releases all resources used by this SvgDocument.</summary>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.Dispose(System.Boolean)">
+      <summary>Releases all resources used by this SvgDocument.</summary>
+      <param name="disposing"></param>
+    </member>
+    <member name="M:Leadtools.Svg.SvgDocument.Finalize">
+      <summary>This method overrides System.Object.Finalize</summary>
+    </member>
+    <member name="P:Leadtools.Svg.SvgDocument.Bounds">
+      <summary>Gets the physical (pixel) bounds and resolution of this SvgDocument.</summary>
+      <value>The physical (pixel) bounds and resolution of this SvgDocument.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgDocument.Handle">
+      <summary>Returns the internal SVG document handle. Used internally by LEADTOOLS.</summary>
+      <value>The internal SVG document handle. Used internally by LEADTOOLS.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgDocument.IsFlat">
+      <summary>Gets a value that indicates whether this SvgDocument is flat.</summary>
+      <value>**true** if this document is flat; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgDocument.IsRenderOptimized">
+      <summary>Gets a value that indicates whether this document has optimized rendering data.</summary>
+      <value>**true** if this document has optimized rendering data; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgDocument.Version">
+      <summary>Gets or sets the SVG version of the document.</summary>
+      <value>The SVG version of the document</value>
+    </member>
+    <member name="T:Leadtools.Svg.SvgElementInfo">
+      <summary>Holds the information of an SVG element.</summary>
+    </member>
+    <member name="M:Leadtools.Svg.SvgElementInfo.#ctor">
+      <summary>Initializes a new instance of SvgElementInfo.</summary>
+    </member>
+    <member name="P:Leadtools.Svg.SvgElementInfo.Bounds">
+      <summary>Gets or sets the physical (pixels) bounding rectangle of the SVG element.</summary>
+      <value>The physical (pixels) bounding rectangle of the SVG element. The default value is an Leadtools.LeadRectD initialized to all 0's.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgElementInfo.ElementType">
+      <summary>Gets or sets the SVG element type.</summary>
+      <value>The SVG element type. The default value is SvgElementType.Unknown.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgElementInfo.TextData">
+      <summary>Gets or sets the text data if this is a text SVG element.</summary>
+      <value>The text data if this is a text SVG element or **null** otherwise. The default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Svg.SvgEnumerateOptions">
+      <summary>Options to use when enumerating SVG elements (nodes).</summary>
+    </member>
+    <member name="M:Leadtools.Svg.SvgEnumerateOptions.#ctor">
+      <summary>Initializes a new instance of SvgEnumerateOptions with default options.</summary>
+    </member>
+    <member name="P:Leadtools.Svg.SvgEnumerateOptions.EnumerateDirection">
+      <summary>Specifies the direction the engine will use when enumerating the elements.</summary>
+      <value>The direction the engine will use when enumerating the elements. The default value is SvgEnumerateDirection.TopToBottom.</value>
+    </member>
+    <member name="T:Leadtools.Svg.SvgFlatOptions">
+      <summary>Options to use when flattening an SVG document.</summary>
+    </member>
+    <member name="M:Leadtools.Svg.SvgFlatOptions.#ctor">
+      <summary>Initializes a new instance of SvgFlatOptions.</summary>
+    </member>
+    <member name="P:Leadtools.Svg.SvgFlatOptions.Size">
+      <summary>Gets or sets a value that indicates the physical size in pixels to use when flattening an SVG document.</summary>
+      <value>The physical size in pixels to use when flattening an SVG document. The default value is LeadSizeD.Empty.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgFlatOptions.TextOnly">
+      <summary>Gets or sets a value that indicates whether to leave only the text elements after the document is flattened.</summary>
+      <value>**true** to leave only the text elements after the document is flattened; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="T:Leadtools.Svg.SvgLoadOptions">
+      <summary>Options to use when loading SVG documents.</summary>
+    </member>
+    <member name="M:Leadtools.Svg.SvgLoadOptions.#ctor">
+      <summary>Initializes a new instance of SvgLoadOptions.</summary>
+    </member>
+    <member name="P:Leadtools.Svg.SvgLoadOptions.LoadFlags">
+      <summary>Gets or sets the options to use during loading of SVG documents.</summary>
+      <value>The options to use during loading of SVG documents. The default value is SvgLoadFlags.Default.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgLoadOptions.MaximumElements">
+      <summary>Gets or sets a value that indicates the maximum number of elements to load when loading an SVG.</summary>
+      <value>A value that indicates the maximum number of elements to load when loading an SVG. Must be a value greater than or equal to 0. Use 0 to load all elements.</value>
+    </member>
+    <member name="T:Leadtools.Svg.SvgMergeOptions">
+      <summary>Options to use with the SvgDocument.MergeWith method.</summary>
+    </member>
+    <member name="M:Leadtools.Svg.SvgMergeOptions.#ctor">
+      <summary>Initializes a new instance of SvgMergeOptions class.</summary>
+    </member>
+    <member name="P:Leadtools.Svg.SvgMergeOptions.DestinationDropFlags">
+      <summary>Gets or sets a value that indicates which element types from the destination document to drop (ignore) when merging.</summary>
+      <value>A value that indicates which element types from the destination document to drop (ignore) when merging. The default value is SvgDropFlags.None, which means no elements are dropped.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgMergeOptions.SourceDropFlags">
+      <summary>Gets or sets a value that indicates which element types from the source document to drop (ignore) when merging.</summary>
+      <value>A value that indicates which element types from the source document to drop (ignore) when merging. The default value is SvgDropFlags.None, which means no elements are dropped.</value>
+    </member>
+    <member name="T:Leadtools.Svg.SvgNodeHandle">
+      <summary>Represents a node (element) in an SVG document.</summary>
+    </member>
+    <member name="M:Leadtools.Svg.SvgNodeHandle.GetAttributeValue(System.String)">
+      <summary>Gets the value of the specified attribute of an element as a raw string.</summary>
+      <param name="name">The attribute name.</param>
+      <returns>The value of the specified attribute. **null** if the element does not have an attribute with this name.</returns>
+    </member>
+    <member name="M:Leadtools.Svg.SvgNodeHandle.GetElementName">
+      <summary>Gets the name of the element.</summary>
+      <returns>The name of the element. This is the XML element name. For example, "svg" for the top level &lt;svg&gt; element in the document, "image" for an &lt;image&gt; element in the document, etc.</returns>
+    </member>
+    <member name="M:Leadtools.Svg.SvgNodeHandle.GetElementValue">
+      <summary>Gets the XML value as a raw string.</summary>
+      <returns>The XML value as a raw string.</returns>
+    </member>
+    <member name="M:Leadtools.Svg.SvgNodeHandle.RemoveElementAttribute(System.String)">
+      <summary>Removes the specified attribute from the XML element.</summary>
+      <param name="name">The attribute name to remove. Ignored if the element does not have an attribute with this name.</param>
+    </member>
+    <member name="M:Leadtools.Svg.SvgNodeHandle.SetAttributeValue(System.String,System.String)">
+      <summary>Sets the value of the specified attribute from a raw string.</summary>
+      <param name="name">The attribute name.</param>
+      <param name="value">The new value of the attribute. A new attribute will be created if the element does not have an attribute with this name.</param>
+    </member>
+    <member name="M:Leadtools.Svg.SvgNodeHandle.SetElementValue(System.String)">
+      <summary>Sets the XML value from a raw string.</summary>
+      <param name="value">The new value of the XML element as a raw string.</param>
+    </member>
+    <member name="P:Leadtools.Svg.SvgNodeHandle.Bounds">
+      <summary>The bounding rectangle of the element.</summary>
+      <value>The bounding rectangle of the element. This value is in SVG coordinates that matches SvgDocument.Bounds.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgNodeHandle.ElementType">
+      <summary>The element type</summary>
+      <value>The element type. For example, ElementType.Svg for the top level \&lt;svg\&gt; element in the document or ElementType.Image for an &lt;image&gt; element in the document, etc.</value>
+    </member>
+    <member name="T:Leadtools.Svg.SvgRenderOptions">
+      <summary>Options for rendering an SVG document to a target device.</summary>
+    </member>
+    <member name="M:Leadtools.Svg.SvgRenderOptions.#ctor">
+      <summary>Initializes a new instance of SvgRenderOptions</summary>
+    </member>
+    <member name="P:Leadtools.Svg.SvgRenderOptions.BackgroundColor">
+      <summary>Gets or sets the color used to fill the background of the transformed destination rectangle.</summary>
+      <value>The color used to the fill the background of the transformed destination rectangle. The default value is "white".</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgRenderOptions.Bounds">
+      <summary>Gets or sets the destination rectangle, in pixel coordinates.</summary>
+      <value>The destination rectangle, in pixel coordinates.The default value is LeadRectD.Empty.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgRenderOptions.ClipBounds">
+      <summary>Gets or sets the clipping rectangle, in pixel coordinates.</summary>
+      <value>The clipping rectangle, in pixel coordinates. The default value is LeadRectD.Empty.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgRenderOptions.RenderFlags">
+      <summary>Extra render options.</summary>
+      <value>Extra SVG render options. Default value is SvgRenderFlags.None</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgRenderOptions.Transform">
+      <summary>Gets or sets the transformation to be applied when rendering the document.</summary>
+      <value>The transformation to be applied when rendering the document. The default value is LeadMatrix.Identity.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgRenderOptions.UseBackgroundColor">
+      <summary>Gets or sets a value that indicates whether to use the BackgroundColor color to fill the background of the transformed destination rectangle.</summary>
+      <value>**true** to use the BackgroundColor color to fill the background of the transformed destination rectangle; otherwise, **false**.</value>
+    </member>
+    <member name="T:Leadtools.Svg.SvgSaveOptions">
+      <summary>SVG write options</summary>
+    </member>
+    <member name="M:Leadtools.Svg.SvgSaveOptions.#ctor">
+      <summary>Initializes a new instance of SvgSaveOptions.</summary>
+    </member>
+    <member name="P:Leadtools.Svg.SvgSaveOptions.Encoding">
+      <summary>Gets or sets the text encoding to use when saving the SVG document.</summary>
+      <value>The text encoding to use when saving the SVG document. The default value is SvgEncoding.UTF8.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgSaveOptions.Format">
+      <summary>Gets or sets the SVG format to use when saving the SVG document.</summary>
+      <value>The format to use when saving the SVG document. The default value is SvgFormat.Svg.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgSaveOptions.Formatted">
+      <summary>Gets or sets a value that indicates whether the final SVG document is formatted in a human-readable format.</summary>
+      <value>**true** the final SVG document is in a human-readable format; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgSaveOptions.Indent">
+      <summary>Gets or sets the string to use for indentation when saving the SVG document.</summary>
+      <value>The string to use for indentation when saving the SVG document. The default value is two spaces " ".</value>
+    </member>
+    <member name="T:Leadtools.Svg.SvgSortOptions">
+      <summary>Options to control how to sort the elements in this SVG document.</summary>
+    </member>
+    <member name="M:Leadtools.Svg.SvgSortOptions.#ctor">
+      <summary>Initializes a new instance of SvgSortOptions</summary>
+    </member>
+    <member name="P:Leadtools.Svg.SvgSortOptions.ExtractText">
+      <summary>Gets or sets the text extraction mode used.</summary>
+      <value>The text extraction mode used. The default value is SvgExtractText.Character.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgSortOptions.SortFlags">
+      <summary>Gets or sets the sorting flags used.</summary>
+      <value>The sorting flags used. The default value is SvgSortFlags.Default.</value>
+    </member>
+    <member name="T:Leadtools.Svg.SvgTextData">
+      <summary>Contains the data of a text element.</summary>
+    </member>
+    <member name="M:Leadtools.Svg.SvgTextData.#ctor">
+      <summary>Initializes a new instance of the SvgTextData.</summary>
+    </member>
+    <member name="P:Leadtools.Svg.SvgTextData.Bounds">
+      <summary>Gets or sets the bounding rectangles of each character in the text.</summary>
+      <value>The bounding rectangles of each character in the text. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgTextData.CharacterFlags">
+      <summary>Gets or sets position flags for each character in the text.</summary>
+      <value>The position flags for each character in the text. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgTextData.Directions">
+      <summary>Gets or sets the direction of each character in the text.</summary>
+      <value>The direction of each character in the text. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgTextData.Text">
+      <summary>Gets or sets the text as a string.</summary>
+      <value>The text as a string. The default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Svg.SvgEnumerateElementsCallback">
+      <summary>Callback to receive the SVG elements (nodes).</summary>
+      <param name="document">The source SvgDocument.</param>
+      <param name="node">Node handle.</param>
+      <param name="userData">Optional user data. This is the same parameter passed to EnumerateElements.</param>
+      <returns>For an example, refer to SvgDocument.EnumerateElements.</returns>
+    </member>
+    <member name="T:Leadtools.Svg.SvgFilterElementsCallback">
+      <summary>Callback to allow certain element types to be ignored when sorting.</summary>
+      <param name="document">The source SvgDocument.</param>
+      <param name="elementType">The current element type.</param>
+      <param name="userData">Optional user data passed to the callback.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="T:Leadtools.Svg.SvgSortElementsCallback">
+      <summary>Callback to receive the sorted SVG elements.</summary>
+      <param name="document">The source SvgDocument.</param>
+      <param name="info">Element information.</param>
+      <param name="userData">Optional user data. This is the same parameter passed to SortElements.</param>
+      <returns>For an example, refer to SvgDocument.SortElements.</returns>
+    </member>
+    <member name="T:Leadtools.Svg.SvgCharacterDirection">
+      <summary>Character direction</summary>
+    </member>
+    <member name="F:Leadtools.Svg.SvgCharacterDirection.LeftToRight">
+      <summary>Character is left to right </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgCharacterDirection.RightToLeft">
+      <summary>Character is right to left </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.Svg.SvgDropFlags">
+      <summary>Options to use when merging SVG documents</summary>
+    </member>
+    <member name="F:Leadtools.Svg.SvgDropFlags.None">
+      <summary>Default. Do not drop any elements.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgDropFlags.Shapes">
+      <summary>Drop all shape elements (vector objects).</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgDropFlags.Images">
+      <summary>Drop all image elements.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgDropFlags.Text">
+      <summary>Drop all text elements.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgDropFlags.LeadTextPathText">
+      <summary>Internal use only.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgDropFlags.LeadTextPathPath">
+      <summary>Internal use only.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.Svg.SvgElementType">
+      <summary>SVG element types</summary>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.Unknown">
+      <summary>Unknown element that does not belong to the SVG standard </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.Doc">
+      <summary>&lt;doc&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.Svg">
+      <summary>&lt;svg&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.G">
+      <summary>&lt;g&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.Defs">
+      <summary>&lt;defs&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.Desc">
+      <summary>&lt;desc&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.Title">
+      <summary>&lt;title&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.Symbol">
+      <summary>&lt;symbol&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.Use">
+      <summary>&lt;use&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.Image">
+      <summary>&lt;image&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.Switch">
+      <summary>&lt;switch&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.Style">
+      <summary>&lt;style&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.Path">
+      <summary>&lt;path&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.Rect">
+      <summary>&lt;rect&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.Circle">
+      <summary>&lt;circle&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.Ellipse">
+      <summary>&lt;ellipse&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.Line">
+      <summary>&lt;line&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.Polyline">
+      <summary>&lt;polyline&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.Polygon">
+      <summary>&lt;polygon&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.Text">
+      <summary>&lt;text&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.TSpan">
+      <summary>&lt;tspan&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.TRef">
+      <summary>&lt;tref&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.TextPath">
+      <summary>&lt;textpath&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.AltGlyph">
+      <summary>&lt;altglyph&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.AltGlyphDef">
+      <summary>&lt;altglyphdef&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.AltGlyphItem">
+      <summary>&lt;altglyphitem&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.GlyphRef">
+      <summary>&lt;glyphref&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.Marker">
+      <summary>&lt;marker&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.ColorProfile">
+      <summary>&lt;colorprofile&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.LinearGradient">
+      <summary>&lt;lineargradient&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.RadialGradient">
+      <summary>&lt;radialgradient&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.Stop">
+      <summary>&lt;stop&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.Pattern">
+      <summary>&lt;pattern&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.ClipPath">
+      <summary>&lt;clippath&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.Font">
+      <summary>&lt;font&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.Glyph">
+      <summary>&lt;glyph&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.MissingGlyph">
+      <summary>&lt;missingglyph&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.HKern">
+      <summary>&lt;hkern&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.VKern">
+      <summary>&lt;vkern&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.FontFace">
+      <summary>&lt;fontface&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.FontFaceSrc">
+      <summary>&lt;fontfacesrc&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.FontFaceUri">
+      <summary>&lt;fontfaceuri&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.FontFaceFormat">
+      <summary>&lt;fontfaceformat&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.FontFaceName">
+      <summary>&lt;fontfacename&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.DefinitionSrc">
+      <summary>&lt;definitionsrc&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.Anchor">
+      <summary>&lt;anchor&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgElementType.Mask">
+      <summary>&lt;mask&gt; element </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.Svg.SvgEncoding">
+      <summary>Encoding to use when saving SVG documents</summary>
+    </member>
+    <member name="F:Leadtools.Svg.SvgEncoding.UTF8">
+      <summary>UTF8 encoding (default) </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgEncoding.UTF16">
+      <summary>UTF16 encoding </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.Svg.SvgEnumerateDirection">
+      <summary>The direction to use when enumerating SVG elements (nodes).</summary>
+    </member>
+    <member name="F:Leadtools.Svg.SvgEnumerateDirection.Top">
+      <summary>Enumerate only the top-level elements.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgEnumerateDirection.TopToBottom">
+      <summary>Enumerate from the top element and all children.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgEnumerateDirection.BottomToTop">
+      <summary>Enumerate from the lowest children in the document and then upward to the top element.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.Svg.SvgExtractText">
+      <summary>Text extraction mode</summary>
+    </member>
+    <member name="F:Leadtools.Svg.SvgExtractText.Character">
+      <summary>Default. Extract the text one character at a time. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgExtractText.Word">
+      <summary>Extract the text one word at a time. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgExtractText.Line">
+      <summary>Extract the text one line at a time. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgExtractText.ExactBounds">
+      <summary>xxxxxxxxxxxxxxxxxxxx. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.Svg.SvgFormat">
+      <summary>The SVG format.</summary>
+    </member>
+    <member name="F:Leadtools.Svg.SvgFormat.Svg">
+      <summary>Non-compressed SVG.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgFormat.Svgz">
+      <summary>Compressed SVG.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.Svg.SvgLoadFlags">
+      <summary>Options to use when loading SVG documents.</summary>
+    </member>
+    <member name="F:Leadtools.Svg.SvgLoadFlags.Default">
+      <summary>Default. Load all elements.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgLoadFlags.DropShapes">
+      <summary>Drop all elements that are not images or text during loading.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgLoadFlags.DropImages">
+      <summary>Drop all image elements during loading.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgLoadFlags.DropText">
+      <summary>Drop all text elements during loading.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgLoadFlags.IgnoreXmlParsingErrors">
+      <summary>Ignore xml parsing errors during loading.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.Svg.SvgRenderFlags">
+      <summary>Extra render options.</summary>
+    </member>
+    <member name="F:Leadtools.Svg.SvgRenderFlags.EnhanceThinLines">
+      <summary>Enhances the strokes thickness if the transformation causes lines to have size less than 1 pixel.</summary>
+    </member>
+    <member name="F:Leadtools.Svg.SvgRenderFlags.Default">
+      <summary>Default rendering.</summary>
+    </member>
+    <member name="T:Leadtools.Svg.SvgSortFlags">
+      <summary>Sorting flags used when enumerating the elements of an SVG</summary>
+    </member>
+    <member name="F:Leadtools.Svg.SvgSortFlags.Default">
+      <summary>Default (left to right and top to bottom) </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgSortFlags.LeftToRight">
+      <summary>Left to right </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgSortFlags.TopToBottom">
+      <summary>Top to bottom </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgSortFlags.RightToLeft">
+      <summary>Right to left </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgSortFlags.BottomToTop">
+      <summary>Bottom to top </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.Svg.SvgTextCharacterFlags">
+      <summary>Text character position flags</summary>
+    </member>
+    <member name="F:Leadtools.Svg.SvgTextCharacterFlags.None">
+      <summary>None </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgTextCharacterFlags.EndOfWord">
+      <summary>The last character in a word </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgTextCharacterFlags.EndOfLine">
+      <summary>The last character in a line </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgTextCharacterFlags.LineBreak">
+      <summary>xxxxxxxxxxxxxxxxxxxx </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.Svg.SvgVersion">
+      <summary>SVG document version</summary>
+    </member>
+    <member name="F:Leadtools.Svg.SvgVersion.Unspecified">
+      <summary>Version is not found in the document </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgVersion.v10">
+      <summary>Version 1.0 </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Svg.SvgVersion.v11">
+      <summary>Version 1.1 </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.Svg.SvgBounds">
+      <summary>Represents the calculated bounds of an SVG document.</summary>
+    </member>
+    <member name="P:Leadtools.Svg.SvgBounds.Bounds">
+      <summary>Gets or sets the physical bounds, in pixels, of this SVG document.</summary>
+      <value>The physical bounds, in pixels, of this SVG document.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgBounds.IsTrimmed">
+      <summary>Gets or sets a value that indicates whether the bounds were calculated by cropping the child elements themselves and ignoring the SVG document size.</summary>
+      <value>**true** if Bounds was calculated by cropping the child elements themselves and ignoring the SVG document size; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgBounds.IsValid">
+      <summary>Gets or sets a value that indicates whether the SVG document contains valid calculated bounds.</summary>
+      <value>**true** if the SVG document contains valid calculated bounds; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Svg.SvgBounds.Resolution">
+      <summary>Gets or sets the resolution (Dots per inch) of the SVG document.</summary>
+      <value>The resolution (Dots per inch) of the SVG document.</value>
+    </member>
+  </members>
+</doc>
